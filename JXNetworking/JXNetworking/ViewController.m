@@ -26,17 +26,22 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)didClickBtn:(id)sender {
-    [self.demoManager loadData];
+    NSInteger requestId = [self.demoManager loadData];
+    [self.demoManager cancelRequestWithRequestId:requestId];
 }
+
+
 
 #pragma mark - JXAPIManagerDelegate
 - (void)jxManagerCallAPIDidSuccess:(JXBaseAPIManager *)manager {
-    NSLog(@"=====");
+    NSLog(@"call api manager success");
 }
 
 - (void)jxManager:(JXBaseAPIManager *)manager callAPIDidFail:(JXResponseFailItem *)failItem {
-    NSLog(@"=====");
+    NSLog(@"call api manager fail");
 }
+
+
 #pragma mark - getter and setter
 - (JXDemoAPIManager *)demoManager {
     if (_demoManager == nil) {

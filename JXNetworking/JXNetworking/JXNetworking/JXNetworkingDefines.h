@@ -78,8 +78,6 @@ extern NSString * _Nonnull const kJXBaseAPIManagerRequestID;
 - (void)jxManagerCallAPIDidSuccess:(JXBaseAPIManager *)manager;
 - (void)jxManager:(JXBaseAPIManager *)manager callAPIDidFail:(JXResponseFailItem *)failItem;
 
-@optional
-- (void)jxManagerCallAPIDidCancel:(JXBaseAPIManager *)manager;
 @end
 
 
