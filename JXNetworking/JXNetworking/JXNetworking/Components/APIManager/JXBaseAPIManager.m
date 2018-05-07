@@ -11,6 +11,8 @@
 #import "JXResponseObject.h"
 #import "JXCacheProxy.h"
 #import "JXServiceFactory.h"
+#import "JXLogger.h"
+
 
 #import "NSURLRequest+JXNetworking.h"
 
@@ -119,10 +121,13 @@ NSString * const kJXBaseAPIManagerRequestID = @"kJXBaseAPIManagerRequestID";
                 self.isLoading = YES;
                 
                 id<JXServiceProtocol> apiService = [[JXServiceFactory sharedInstance] serviceWithIdentifier:self.child.apiServiceIdentifier];
-                NSURLRequest *request = [apiService requestWithParams:reformParams apiPath:self.child.apiPath requestType:self.child.apiRequestType];
+                NSURLRequest *request = [apiService requestWithParams:reformParams apiPath:self.child.apiPath apiVersion:self.child.apiVersion requestType:self.child.apiRequestType];
+                
                 request.jx_actualRequestParams = reformParams;
                 request.jx_originalRequestParams = params;
                 request.jx_service = apiService;
+                
+                [JXLogger logDebugInfoWithRequest:request apiPath:self.child.apiPath service:apiService];
                 
                 NSNumber *requestId = [[JXAPIProxy sharedInstance] callAPIWithRequest:request loadDataSuccess:^(JXResponseSuccessItem *successItem) {
                     [self successedOnCallingAPI:successItem];

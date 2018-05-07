@@ -8,6 +8,10 @@
 
 #import "JXCacheProxy.h"
 #import "JXDiskCacheManager.h"
+#import "JXLogger.h"
+#import "JXServiceFactory.h"
+
+
 #import "NSDictionary+JXNetworking.h"
 
 @interface JXCacheProxy()
@@ -41,7 +45,7 @@
                         apiServiceIdentifier:(NSString *)apiServiceIdentifier
                                      apiPath:(NSString *)apiPath
                                    cacheTime:(NSTimeInterval)cacheTime {
-    if (successItem.originalRequestParams && successItem.responseJSONDict
+    if (successItem.actualRequestParams && successItem.responseJSONDict
         && apiPath.length && apiServiceIdentifier.length) {
         
         NSString *key = [self keyWithServiceIdentifier:apiServiceIdentifier apiPath:apiPath requestParams:successItem.originalRequestParams];
@@ -59,6 +63,10 @@
     
     JXResponseSuccessItem *successItem = [self.diskCacheManager fetchCachedSuccessItemWithKey:key];
     
+    if (successItem) {
+         [JXLogger logDebugInfoWithCachedResponse:successItem apiPath:apiPath apiParams:apiParams];
+    }
+   
     return successItem;
 }
 

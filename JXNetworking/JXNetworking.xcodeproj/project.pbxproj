@@ -10,6 +10,9 @@
 		2728D792A97D428D88733E59 /* libPods-JXNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A472871FE32200CDB7DF2BCB /* libPods-JXNetworking.a */; };
 		780F8EBC209D8DE30004918B /* JXDiskCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F8EBB209D8DE30004918B /* JXDiskCacheManager.m */; };
 		780F8EC0209D9F9C0004918B /* NSDictionary+JXNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F8EBF209D9F9C0004918B /* NSDictionary+JXNetworking.m */; };
+		780F8EC8209FF0E00004918B /* JXDemoService.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F8EC7209FF0E00004918B /* JXDemoService.m */; };
+		780F8ECC209FF3A30004918B /* Target_JXDemoService.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F8ECB209FF3A30004918B /* Target_JXDemoService.m */; };
+		780F8ECF209FF4200004918B /* JXDemoAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F8ECE209FF4200004918B /* JXDemoAPIManager.m */; };
 		7812B699209C358B00A5CE33 /* JXLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 7812B698209C358B00A5CE33 /* JXLogger.m */; };
 		78275CB1209BFE2500CE63A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78275CB0209BFE2500CE63A8 /* AppDelegate.m */; };
 		78275CB4209BFE2500CE63A8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78275CB3209BFE2500CE63A8 /* ViewController.m */; };
@@ -42,6 +45,13 @@
 		780F8EBB209D8DE30004918B /* JXDiskCacheManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXDiskCacheManager.m; sourceTree = "<group>"; };
 		780F8EBE209D9F9C0004918B /* NSDictionary+JXNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JXNetworking.h"; sourceTree = "<group>"; };
 		780F8EBF209D9F9C0004918B /* NSDictionary+JXNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JXNetworking.m"; sourceTree = "<group>"; };
+		780F8EC6209FF0E00004918B /* JXDemoService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXDemoService.h; sourceTree = "<group>"; };
+		780F8EC7209FF0E00004918B /* JXDemoService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXDemoService.m; sourceTree = "<group>"; };
+		780F8EC9209FF1000004918B /* JXNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXNetworking.h; sourceTree = "<group>"; };
+		780F8ECA209FF3A30004918B /* Target_JXDemoService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Target_JXDemoService.h; sourceTree = "<group>"; };
+		780F8ECB209FF3A30004918B /* Target_JXDemoService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Target_JXDemoService.m; sourceTree = "<group>"; };
+		780F8ECD209FF4200004918B /* JXDemoAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXDemoAPIManager.h; sourceTree = "<group>"; };
+		780F8ECE209FF4200004918B /* JXDemoAPIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXDemoAPIManager.m; sourceTree = "<group>"; };
 		7812B697209C358B00A5CE33 /* JXLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXLogger.h; sourceTree = "<group>"; };
 		7812B698209C358B00A5CE33 /* JXLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXLogger.m; sourceTree = "<group>"; };
 		7812B69C209C363A00A5CE33 /* JXNetworkingDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXNetworkingDefines.h; sourceTree = "<group>"; };
@@ -120,6 +130,27 @@
 			path = NSDictionary;
 			sourceTree = "<group>";
 		};
+		780F8EC4209FF0900004918B /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				780F8EC5209FF0A30004918B /* Service */,
+				780F8ECD209FF4200004918B /* JXDemoAPIManager.h */,
+				780F8ECE209FF4200004918B /* JXDemoAPIManager.m */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		780F8EC5209FF0A30004918B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				780F8EC6209FF0E00004918B /* JXDemoService.h */,
+				780F8EC7209FF0E00004918B /* JXDemoService.m */,
+				780F8ECA209FF3A30004918B /* Target_JXDemoService.h */,
+				780F8ECB209FF3A30004918B /* Target_JXDemoService.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		7812B696209C357800A5CE33 /* Logger */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				78275CD3209BFE9E00CE63A8 /* JXNetworking */,
+				780F8EC4209FF0900004918B /* Demo */,
 				78275CAF209BFE2500CE63A8 /* AppDelegate.h */,
 				78275CB0209BFE2500CE63A8 /* AppDelegate.m */,
 				78275CB2209BFE2500CE63A8 /* ViewController.h */,
@@ -192,6 +224,7 @@
 				7812B69A209C35A500A5CE33 /* Services */,
 				78275CD4209BFEB300CE63A8 /* Components */,
 				7812B69C209C363A00A5CE33 /* JXNetworkingDefines.h */,
+				780F8EC9209FF1000004918B /* JXNetworking.h */,
 			);
 			path = JXNetworking;
 			sourceTree = "<group>";
@@ -446,7 +479,10 @@
 				78275CB1209BFE2500CE63A8 /* AppDelegate.m in Sources */,
 				7812B699209C358B00A5CE33 /* JXLogger.m in Sources */,
 				78BD70BA209C62C8007F44BA /* JXCacheProxy.m in Sources */,
+				780F8EC8209FF0E00004918B /* JXDemoService.m in Sources */,
 				78BD70B6209C45D0007F44BA /* JXBaseAPIManager.m in Sources */,
+				780F8ECF209FF4200004918B /* JXDemoAPIManager.m in Sources */,
+				780F8ECC209FF3A30004918B /* Target_JXDemoService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,8 +7,9 @@
 //
 
 #import "JXAPIProxy.h"
-#import <AFNetworking/AFNetworking.h>
+#import "JXLogger.h"
 
+#import <AFNetworking/AFNetworking.h>
 
 @interface JXAPIProxy()
 
@@ -81,11 +82,14 @@
                                    JXResponseFailItem *failItem = [[JXResponseFailItem alloc] initWithResponseFailItemWithRequest:request requestId:requestId error:error];
                                    failCallback?failCallback(failItem):nil;
                                    
+                                   [JXLogger logDebugInfoWithResponse:response responseObject:failItem];
+                                   
                                } else {
                                    
                                    JXResponseSuccessItem *successItem = [[JXResponseSuccessItem alloc] initResponseSuccessItemWithRequest:request responseData:responseData requestId:requestId];
                                    successCallback?successCallback(successItem):nil;
                                    
+                                   [JXLogger logDebugInfoWithResponse:response responseObject:successItem];
                                }
                            }];
     

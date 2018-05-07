@@ -7,7 +7,7 @@
 //
 
 #import "JXResponseObject.h"
-
+#import "NSURLRequest+JXNetworking.h"
 
 #pragma mark - JXResponseSuccessItem
 @interface JXResponseSuccessItem()
@@ -33,6 +33,9 @@
         self.status = JXResponseStatusSuccess;
         self.requestId = [requestId integerValue];
         self.isCache = NO;
+        
+        self.originalRequestParams = request.jx_originalRequestParams;
+        self.actualRequestParams = request.jx_actualRequestParams;
     }
     return self;
 }

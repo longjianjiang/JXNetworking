@@ -7,9 +7,10 @@
 //
 
 #import "ViewController.h"
+#import "JXDemoAPIManager.h"
 
-@interface ViewController ()
-
+@interface ViewController ()<JXAPIManagerDelegate>
+@property (nonatomic, strong) JXDemoAPIManager *demoManager;
 @end
 
 @implementation ViewController
@@ -24,6 +25,25 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)didClickBtn:(id)sender {
+    [self.demoManager loadData];
+}
 
+#pragma mark - JXAPIManagerDelegate
+- (void)jxManagerCallAPIDidSuccess:(JXBaseAPIManager *)manager {
+    NSLog(@"=====");
+}
 
+- (void)jxManager:(JXBaseAPIManager *)manager callAPIDidFail:(JXResponseFailItem *)failItem {
+    NSLog(@"=====");
+}
+#pragma mark - getter and setter
+- (JXDemoAPIManager *)demoManager {
+    if (_demoManager == nil) {
+        _demoManager = [JXDemoAPIManager new];
+        _demoManager.cachePolicy = JXNetworkingCachePolicyDisk;
+        _demoManager.delegate = self;
+    }
+    return _demoManager;
+}
 @end

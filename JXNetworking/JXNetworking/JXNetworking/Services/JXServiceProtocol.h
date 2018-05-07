@@ -14,6 +14,7 @@
 
 - (NSURLRequest *)requestWithParams:(NSDictionary *)params
                             apiPath:(NSString *)apiPath
+                         apiVersion:(NSString *)apiVersion
                         requestType:(JXNetworkingRequestType)requestType;
 
 
