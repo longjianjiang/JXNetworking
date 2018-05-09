@@ -36,7 +36,7 @@ typedef NS_ENUM(NSUInteger, JXNetworkingAPIManagerErrorType) {
     JXNetworkingAPIManagerErrorTypeContentError,    // 请求成功，此时服务器返回数据不符合预期
     JXNetworkingAPIManagerErrorTypeParamsError,     // 请求参数错误，调用API之前会进行参数校验
     JXNetworkingAPIManagerErrorTypeParamsCorrect,   // 请求参数校验正确 & 服务器返回参数校验正确
-    JXNetworkingAPIManagerErrorTypeTimeout,         // 请求超时，APIProxy设置20秒超时
+    JXNetworkingAPIManagerErrorTypeTimeout,         // 请求超时
     JXNetworkingAPIManagerErrorTypeOffline,         // 离线状态，调用API之前会检查网络状态
     JXNetworkingAPIManagerErrorTypeCancel,          // 取消请求
     JXNetworkingAPIManagerErrorTypeServerCrash,     // 500错误
@@ -60,6 +60,22 @@ extern NSString * _Nonnull const kJXBaseAPIManagerRequestID;
 - (JXNetworkingRequestType)apiRequestType; // 默认是POST请求
 - (NSDictionary *)reformParams:(NSDictionary *)params;
 @end
+
+
+/*************************************************************************************/
+
+@protocol JXPageableAPIManager <NSObject>
+
+@property (nonatomic, assign) NSInteger pageSize;
+@property (nonatomic, assign, readonly) NSUInteger currentPageNumber;
+@property (nonatomic, assign, readonly) BOOL isFirstPage;
+@property (nonatomic, assign, readonly) BOOL isLastPage;
+
+- (void)loadNextPage;
+
+@end
+
+
 
 /*************************************************************************************/
 

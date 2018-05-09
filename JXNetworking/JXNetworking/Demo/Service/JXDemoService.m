@@ -9,6 +9,8 @@
 #import "JXDemoService.h"
 #import <AFNetworking/AFNetworking.h>
 
+static NSTimeInterval kTimeoutInterval = 20;
+
 @interface JXDemoService()
 @property (nonatomic, copy) NSString *baseURL;
 
@@ -43,6 +45,7 @@
     if (_httpRequestSerializer == nil) {
         _httpRequestSerializer = [AFHTTPRequestSerializer serializer];
         [_httpRequestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        _httpRequestSerializer.timeoutInterval = kTimeoutInterval;
     }
     return _httpRequestSerializer;
 }

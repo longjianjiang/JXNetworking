@@ -32,13 +32,16 @@
     return @"v1.0";
 }
 
-- (JXNetworkingRequestType)apiRequestType {
-    return JXNetworkingRequestTypePost;
-}
-
 - (NSString *)apiServiceIdentifier {
     return JXNetworkingDemoServiceIdentifier;
 }
+
+- (NSDictionary *)reformParams:(NSDictionary *)params {
+    NSMutableDictionary *mutableParams = [params mutableCopy];
+    [mutableParams setObject:@(1) forKey:@"page"];
+    return mutableParams;
+}
+
 
 #pragma mark - JXAPIManagerDataSource
 - (NSDictionary *)paramsForCallAPI:(JXBaseAPIManager *)manager {
@@ -53,4 +56,6 @@
 - (JXNetworkingAPIManagerErrorType)jxManager:(JXBaseAPIManager *)manager isCorrectWithParamsForCallAPI:(NSDictionary *)params {
     return JXNetworkingAPIManagerErrorTypeParamsCorrect;
 }
+
+
 @end

@@ -47,6 +47,9 @@
 - (nonnull id)fetchDataWithReformer:(id <JXAPIManagerDataReformer> )reformer;
 - (void)clearData;
 
+
+// default
+- (JXNetworkingRequestType)apiRequestType;
 @end
 
 @interface JXBaseAPIManager (InnerInterceptor)

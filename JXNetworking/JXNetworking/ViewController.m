@@ -27,7 +27,7 @@
 }
 - (IBAction)didClickBtn:(id)sender {
     NSInteger requestId = [self.demoManager loadData];
-    [self.demoManager cancelRequestWithRequestId:requestId];
+//    [self.demoManager cancelRequestWithRequestId:requestId];
 }
 
 

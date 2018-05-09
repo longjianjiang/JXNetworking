@@ -32,6 +32,11 @@ NSString * const kJXBaseAPIManagerRequestID = @"kJXBaseAPIManagerRequestID";
 
 @implementation JXBaseAPIManager
 
+#pragma mark - default
+- (JXNetworkingRequestType)apiRequestType {
+    return JXNetworkingRequestTypePost;
+}
+
 #pragma mark - life cycle
 - (instancetype)init {
     self = [super init];
