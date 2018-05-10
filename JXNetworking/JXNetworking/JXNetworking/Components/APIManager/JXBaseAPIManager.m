@@ -147,6 +147,9 @@ NSString * const kJXBaseAPIManagerRequestID = @"kJXBaseAPIManagerRequestID";
                     if (failItem.status == JXResponseStatusErrorNoNetwork) {
                         errorType = JXNetworkingAPIManagerErrorTypeOffline;
                     }
+                    if (failItem.status == JXResponseStatusErrorServerCrash) {
+                        errorType = JXNetworkingAPIManagerErrorTypeServerCrash;
+                    }
                     [self failedOnCallingAPI:failItem withErrorType:errorType];
                 }];
                 

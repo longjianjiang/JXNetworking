@@ -41,9 +41,11 @@
         JXResponseFailItem *item = (JXResponseFailItem *)responseObj;
         NSMutableString *log = [NSMutableString string];
         [log appendString:@"\n↘↘↘↘↘↘↘↘↘↘↘↘↘↘↘↘↘↘↘↘↘↘↘ [ JXNetworking Response Info Start] ↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙"];
-        [log appendFormat:@"\nReuqest Path   : %@", item.request.URL.absoluteString];
-        [log appendFormat:@"\nReuqest Params : %@", item.request.jx_actualRequestParams];
-        [log appendFormat:@"\nError Msg      : %@", item.errorMsg];
+        [log appendFormat:@"\nReuqest Path         : %@", item.request.URL.absoluteString];
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+        [log appendFormat:@"\nResponse Status Code : %ld", (long)httpResponse.statusCode];
+        [log appendFormat:@"\nReuqest Params       : %@", item.request.jx_actualRequestParams];
+        [log appendFormat:@"\nError Msg            : %@", item.errorMsg];
         [log appendString:@"\n↗↗↗↗↗↗↗↗↗↗↗↗↗↗↗↗↗↗↗↗↗↗↗ [ JXNetworking Response Info End ] ↖↖↖↖↖↖↖↖↖↖↖↖↖↖↖↖↖↖↖↖↖↖↖"];
         NSLog(@"%@",log);
     }

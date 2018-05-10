@@ -93,7 +93,7 @@
 #pragma mark - private method
 - (NSString *)getErrorMsgWithError:(NSError *)error {
 #ifdef DEBUG
-    NSString *errorMsg = @"【JXResponseFailItem】没有错误 ";
+    NSString *errorMsg = @"【JXResponseFailItem】未知错误 ";
 #else
     NSString *errorMsg = @"";
 #endif
@@ -107,6 +107,9 @@
         }
         if (error.code == NSURLErrorNotConnectedToInternet) {
             errorMsg = @"网络不通";
+        }
+        if (error.code == NSURLErrorBadServerResponse) {
+            errorMsg = @"服务器错误";
         }
         return errorMsg;
     } else {
@@ -125,6 +128,9 @@
         }
         if (error.code == NSURLErrorNotConnectedToInternet) {
             status = JXResponseStatusErrorNoNetwork;
+        }
+        if (error.code == NSURLErrorBadServerResponse) {
+            status = JXResponseStatusErrorServerCrash;
         }
         return status;
     } else {

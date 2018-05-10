@@ -25,7 +25,7 @@
 
 #pragma mark - JXAPIManager
 - (NSString *)apiPath {
-    return @"teacher/banner";
+    return @"student/video/all";
 }
 
 - (NSString *)apiVersion {
@@ -39,13 +39,14 @@
 - (NSDictionary *)reformParams:(NSDictionary *)params {
     NSMutableDictionary *mutableParams = [params mutableCopy];
     [mutableParams setObject:@(1) forKey:@"page"];
+    [mutableParams setObject:@(2) forKey:@"video_type"];
     return mutableParams;
 }
 
 
 #pragma mark - JXAPIManagerDataSource
 - (NSDictionary *)paramsForCallAPI:(JXBaseAPIManager *)manager {
-    return @{@"token": @"baa80b57-47f5-4217-8c07-41b7c042cfb7&"};
+    return @{@"token": @"baa80b57-47f5-4217-8c07-41b7c042cfb7"};
 }
 
 #pragma mark - JXAPIManagerValidator

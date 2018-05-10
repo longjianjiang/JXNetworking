@@ -15,7 +15,7 @@ static NSTimeInterval kTimeoutInterval = 20;
 @property (nonatomic, copy) NSString *baseURL;
 
 
-@property (nonatomic, strong) AFHTTPRequestSerializer *httpRequestSerializer;
+@property (nonatomic, strong) AFJSONRequestSerializer *httpRequestSerializer;
 @end
 
 
@@ -41,10 +41,10 @@ static NSTimeInterval kTimeoutInterval = 20;
     return JXNetworkingServiceEnviromentRelease;
 }
 
-- (AFHTTPRequestSerializer *)httpRequestSerializer {
+
+- (AFJSONRequestSerializer *)httpRequestSerializer {
     if (_httpRequestSerializer == nil) {
-        _httpRequestSerializer = [AFHTTPRequestSerializer serializer];
-        [_httpRequestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        _httpRequestSerializer = [AFJSONRequestSerializer serializer];
         _httpRequestSerializer.timeoutInterval = kTimeoutInterval;
     }
     return _httpRequestSerializer;
