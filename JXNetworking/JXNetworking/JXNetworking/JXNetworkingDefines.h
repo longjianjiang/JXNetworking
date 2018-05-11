@@ -66,12 +66,18 @@ extern NSString * _Nonnull const kJXBaseAPIManagerRequestID;
 
 @protocol JXPageableAPIManager <NSObject>
 
-@property (nonatomic, assign) NSInteger pageSize;
-@property (nonatomic, assign, readonly) NSUInteger currentPageNumber;
-@property (nonatomic, assign, readonly) BOOL isFirstPage;
-@property (nonatomic, assign, readonly) BOOL isLastPage;
+@required
+- (NSUInteger)currentPageSize;
 
-- (void)loadNextPage;
+@optional
+- (NSUInteger)pageSize; // 默认为服务端的默认页数
+
+- (NSInteger)loadNextPage;
+- (void)resetPage;
+- (void)resetPage:(NSUInteger)page;
+
+@property (nonatomic, assign, readonly) NSUInteger currentPageNumber;
+@property (nonatomic, assign, readonly) BOOL hasNextPage;
 
 @end
 

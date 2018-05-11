@@ -10,6 +10,7 @@
 #import "JXNetworkingDefines.h"
 
 @protocol JXServiceProtocol <NSObject>
+
 @property (nonatomic, assign) JXNetworkingServiceEnviroment apiEnviroment;
 
 - (NSURLRequest *)requestWithParams:(NSDictionary *)params

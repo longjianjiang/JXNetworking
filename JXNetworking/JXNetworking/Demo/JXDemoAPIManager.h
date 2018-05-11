@@ -9,6 +9,6 @@
 #import "JXNetworking.h"
 
 
-@interface JXDemoAPIManager : JXBaseAPIManager <JXAPIManager>
+@interface JXDemoAPIManager : JXBaseAPIManager <JXAPIManager, JXPageableAPIManager>
 
 @end

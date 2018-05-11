@@ -48,7 +48,7 @@
     if (successItem.actualRequestParams && successItem.responseJSONDict
         && apiPath.length && apiServiceIdentifier.length) {
         
-        NSString *key = [self keyWithServiceIdentifier:apiServiceIdentifier apiPath:apiPath requestParams:successItem.originalRequestParams];
+        NSString *key = [self keyWithServiceIdentifier:apiServiceIdentifier apiPath:apiPath requestParams:successItem.actualRequestParams];
         
         [self.diskCacheManager saveCacheWithSuccessItem:successItem key:key cacheTime:cacheTime];
         

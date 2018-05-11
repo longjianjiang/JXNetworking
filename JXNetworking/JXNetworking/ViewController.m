@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "JXDemoAPIManager.h"
 
-@interface ViewController ()<JXAPIManagerDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface ViewController ()<JXAPIManagerDataSource, JXAPIManagerDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 
 @property (nonatomic, strong) JXDemoAPIManager *demoManager;
@@ -40,7 +40,18 @@ static NSString * const kCellReuseIdentifier = @"kCellReuseIdentifier";
 
 #pragma mark - response method
 - (IBAction)didClickBtn:(id)sender {
-    NSInteger requestId = [self.demoManager loadData];
+    
+    if (self.demoManager.hasNextPage) {
+        [self.demoManager loadNextPage];
+    } else {
+        NSLog(@"已经到底了");
+        [self.demoManager resetPage:2];
+        [self.demoManager loadNextPage];
+    }
+    
+    
+//    NSInteger requestId = [self.demoManager loadData];
+//    [self.demoManager cancelRequestWithRequestId:requestId];
 }
 
 
@@ -55,6 +66,12 @@ static NSString * const kCellReuseIdentifier = @"kCellReuseIdentifier";
     NSLog(@"call api manager fail");
 }
 
+
+#pragma mark - JXAPIManagerDataSource
+- (NSDictionary *)paramsForCallAPI:(JXBaseAPIManager *)manager {
+    return @{@"token": @"0e7e8f19-401b-47d4-8658-e296bea5411c"};
+}
+
 #pragma mark - UITableView delegate & datasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 0;
@@ -65,8 +82,9 @@ static NSString * const kCellReuseIdentifier = @"kCellReuseIdentifier";
 - (JXDemoAPIManager *)demoManager {
     if (_demoManager == nil) {
         _demoManager = [JXDemoAPIManager new];
-        _demoManager.cachePolicy = JXNetworkingCachePolicyDisk;
+        _demoManager.cachePolicy = JXNetworkingCachePolicyNoCache;
         _demoManager.delegate = self;
+        _demoManager.paramsSource = self;
     }
     return _demoManager;
 }

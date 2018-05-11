@@ -9,7 +9,14 @@
 #import "JXDemoAPIManager.h"
 #import "Target_JXDemoService.h"
 
-@interface JXBaseAPIManager()<JXAPIManagerValidator, JXAPIManagerDataSource>
+
+
+@interface JXDemoAPIManager()<JXAPIManagerValidator> {
+    BOOL _hasNextPage;
+    NSUInteger _currentPage;
+    NSUInteger _totalPage;
+}
+
 @end
 
 
@@ -17,11 +24,52 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        self.paramsSource = self;
+        _currentPage = 1;
+        _hasNextPage = YES;
         self.validator = self;
     }
     return self;
 }
+
+
+#pragma mark - JXPageableAPIManager
+- (NSUInteger)currentPageSize {
+    return [self.successItem.responseJSONDict[@"data"][@"items"] count];
+}
+
+- (NSUInteger)pageSize {
+    return 10;
+}
+
+// public method
+- (void)resetPage {
+    [self resetPage:1];
+}
+
+- (void)resetPage:(NSUInteger)page {
+    if (_totalPage && page > _totalPage) {
+        return;
+    }
+    _currentPage = page;
+    
+    _hasNextPage = page < _totalPage;
+}
+
+- (NSInteger)loadNextPage {
+    if (self.isLoading) {
+        return -1;
+    }
+    return [super loadData];
+}
+
+// property
+- (NSUInteger)currentPageNumber {
+    return _currentPage;
+}
+- (BOOL)hasNextPage {
+    return _hasNextPage;
+}
+
 
 #pragma mark - JXAPIManager
 - (NSString *)apiPath {
@@ -38,16 +86,12 @@
 
 - (NSDictionary *)reformParams:(NSDictionary *)params {
     NSMutableDictionary *mutableParams = [params mutableCopy];
-    [mutableParams setObject:@(1) forKey:@"page"];
+    [mutableParams setObject:@(_currentPage) forKey:@"page"];
     [mutableParams setObject:@(2) forKey:@"video_type"];
+    [mutableParams setObject:@(self.pageSize) forKey:@"per_page"];
     return mutableParams;
 }
 
-
-#pragma mark - JXAPIManagerDataSource
-- (NSDictionary *)paramsForCallAPI:(JXBaseAPIManager *)manager {
-    return @{@"token": @"baa80b57-47f5-4217-8c07-41b7c042cfb7"};
-}
 
 #pragma mark - JXAPIManagerValidator
 - (JXNetworkingAPIManagerErrorType)jxManager:(JXBaseAPIManager *)manager isCorrectWithResponseData:(id)responseData {
@@ -58,5 +102,23 @@
     return JXNetworkingAPIManagerErrorTypeParamsCorrect;
 }
 
+#pragma mark - JXAPIManagerInterceptor
+- (BOOL)beforePerformSuccessItem:(JXResponseSuccessItem *)successItem {
+   
+    if (self.currentPageSize < self.pageSize) {
+        _totalPage = _currentPage;
+        _hasNextPage = NO;
+    } else {
+         _currentPage += 1;
+    }
+    return [super beforePerformSuccessItem:successItem];
+}
+
+- (BOOL)beforePerformFailItem:(JXResponseFailItem *)failItem {
+    if (_currentPage > 1) {
+        _currentPage -= 1;
+    }
+    return [super beforePerformFailItem:failItem];
+}
 
 @end
