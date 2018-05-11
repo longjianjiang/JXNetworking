@@ -68,10 +68,9 @@ extern NSString * _Nonnull const kJXBaseAPIManagerRequestID;
 
 @required
 - (NSUInteger)currentPageSize;
+- (NSUInteger)pageSize;
 
 @optional
-- (NSUInteger)pageSize; // 默认为服务端的默认页数
-
 - (NSInteger)loadNextPage;
 - (void)resetPage;
 - (void)resetPage:(NSUInteger)page;

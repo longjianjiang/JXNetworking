@@ -19,24 +19,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tW-5l-7fH">
-                                <rect key="frame" x="154" y="274" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="2iz-eM-U64"/>
-                                    <constraint firstAttribute="height" constant="30" id="Qwe-fD-bvT"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="16" y="220" width="136" height="30"/>
+                                <state key="normal" title="CallNormalManager"/>
                                 <connections>
                                     <action selector="didClickBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LdX-rl-gde"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GTL-N8-Rze">
+                                <rect key="frame" x="16" y="270" width="150" height="30"/>
+                                <state key="normal" title="CallPageableManager"/>
+                                <connections>
+                                    <action selector="didClickBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e3r-nd-vW4"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="0tW-5l-7fH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="154" id="KXN-AQ-7ly"/>
-                            <constraint firstItem="0tW-5l-7fH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="254" id="Zs9-iZ-mez"/>
+                            <constraint firstItem="0tW-5l-7fH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="3mg-ex-Gwx"/>
+                            <constraint firstItem="GTL-N8-Rze" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="IgG-eV-Hm8"/>
+                            <constraint firstItem="GTL-N8-Rze" firstAttribute="top" secondItem="0tW-5l-7fH" secondAttribute="bottom" constant="20" id="ch1-z0-fSV"/>
+                            <constraint firstItem="0tW-5l-7fH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="taH-oO-hzz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="normalManagerBtn" destination="0tW-5l-7fH" id="jxo-38-H6Q"/>
+                        <outlet property="pageableManagerBtn" destination="GTL-N8-Rze" id="eYm-Id-nvp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

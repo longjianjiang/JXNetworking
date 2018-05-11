@@ -12,7 +12,6 @@
 		780F8EC0209D9F9C0004918B /* NSDictionary+JXNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F8EBF209D9F9C0004918B /* NSDictionary+JXNetworking.m */; };
 		780F8EC8209FF0E00004918B /* JXDemoService.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F8EC7209FF0E00004918B /* JXDemoService.m */; };
 		780F8ECC209FF3A30004918B /* Target_JXDemoService.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F8ECB209FF3A30004918B /* Target_JXDemoService.m */; };
-		780F8ECF209FF4200004918B /* JXDemoAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 780F8ECE209FF4200004918B /* JXDemoAPIManager.m */; };
 		7812B699209C358B00A5CE33 /* JXLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 7812B698209C358B00A5CE33 /* JXLogger.m */; };
 		78275CB1209BFE2500CE63A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78275CB0209BFE2500CE63A8 /* AppDelegate.m */; };
 		78275CB4209BFE2500CE63A8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78275CB3209BFE2500CE63A8 /* ViewController.m */; };
@@ -27,6 +26,8 @@
 		78BD70B6209C45D0007F44BA /* JXBaseAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78BD70B5209C45D0007F44BA /* JXBaseAPIManager.m */; };
 		78BD70BA209C62C8007F44BA /* JXCacheProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 78BD70B9209C62C8007F44BA /* JXCacheProxy.m */; };
 		78BD70C2209C6BDE007F44BA /* NSURLRequest+JXNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 78BD70C1209C6BDE007F44BA /* NSURLRequest+JXNetworking.m */; };
+		78ECB10220A58F400088B73B /* JXDemoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ECB10120A58F400088B73B /* JXDemoManager.m */; };
+		78ECB10520A58F520088B73B /* JXPageableDemoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ECB10420A58F520088B73B /* JXPageableDemoManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,8 +51,6 @@
 		780F8EC9209FF1000004918B /* JXNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXNetworking.h; sourceTree = "<group>"; };
 		780F8ECA209FF3A30004918B /* Target_JXDemoService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Target_JXDemoService.h; sourceTree = "<group>"; };
 		780F8ECB209FF3A30004918B /* Target_JXDemoService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Target_JXDemoService.m; sourceTree = "<group>"; };
-		780F8ECD209FF4200004918B /* JXDemoAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXDemoAPIManager.h; sourceTree = "<group>"; };
-		780F8ECE209FF4200004918B /* JXDemoAPIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXDemoAPIManager.m; sourceTree = "<group>"; };
 		7812B697209C358B00A5CE33 /* JXLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXLogger.h; sourceTree = "<group>"; };
 		7812B698209C358B00A5CE33 /* JXLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXLogger.m; sourceTree = "<group>"; };
 		7812B69C209C363A00A5CE33 /* JXNetworkingDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXNetworkingDefines.h; sourceTree = "<group>"; };
@@ -81,6 +80,10 @@
 		78BD70B9209C62C8007F44BA /* JXCacheProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXCacheProxy.m; sourceTree = "<group>"; };
 		78BD70C0209C6BDE007F44BA /* NSURLRequest+JXNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+JXNetworking.h"; sourceTree = "<group>"; };
 		78BD70C1209C6BDE007F44BA /* NSURLRequest+JXNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+JXNetworking.m"; sourceTree = "<group>"; };
+		78ECB10020A58F400088B73B /* JXDemoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXDemoManager.h; sourceTree = "<group>"; };
+		78ECB10120A58F400088B73B /* JXDemoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXDemoManager.m; sourceTree = "<group>"; };
+		78ECB10320A58F520088B73B /* JXPageableDemoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXPageableDemoManager.h; sourceTree = "<group>"; };
+		78ECB10420A58F520088B73B /* JXPageableDemoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXPageableDemoManager.m; sourceTree = "<group>"; };
 		A472871FE32200CDB7DF2BCB /* libPods-JXNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JXNetworking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4BA113CCA1BBF2ACB9FF669 /* Pods-JXNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXNetworking.release.xcconfig"; path = "Pods/Target Support Files/Pods-JXNetworking/Pods-JXNetworking.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,9 +136,8 @@
 		780F8EC4209FF0900004918B /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				78ECB0FF20A58F1E0088B73B /* APIManager */,
 				780F8EC5209FF0A30004918B /* Service */,
-				780F8ECD209FF4200004918B /* JXDemoAPIManager.h */,
-				780F8ECE209FF4200004918B /* JXDemoAPIManager.m */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -313,6 +315,17 @@
 			path = NSURLRequest;
 			sourceTree = "<group>";
 		};
+		78ECB0FF20A58F1E0088B73B /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				78ECB10020A58F400088B73B /* JXDemoManager.h */,
+				78ECB10120A58F400088B73B /* JXDemoManager.m */,
+				78ECB10320A58F520088B73B /* JXPageableDemoManager.h */,
+				78ECB10420A58F520088B73B /* JXPageableDemoManager.m */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -478,10 +491,11 @@
 				78BD70B1209C3D26007F44BA /* JXServiceFactory.m in Sources */,
 				78275CB1209BFE2500CE63A8 /* AppDelegate.m in Sources */,
 				7812B699209C358B00A5CE33 /* JXLogger.m in Sources */,
+				78ECB10520A58F520088B73B /* JXPageableDemoManager.m in Sources */,
 				78BD70BA209C62C8007F44BA /* JXCacheProxy.m in Sources */,
 				780F8EC8209FF0E00004918B /* JXDemoService.m in Sources */,
+				78ECB10220A58F400088B73B /* JXDemoManager.m in Sources */,
 				78BD70B6209C45D0007F44BA /* JXBaseAPIManager.m in Sources */,
-				780F8ECF209FF4200004918B /* JXDemoAPIManager.m in Sources */,
 				780F8ECC209FF3A30004918B /* Target_JXDemoService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,28 +1,26 @@
 //
-//  JXDemoAPIManager.m
+//  JXPageableDemoManager.m
 //  JXNetworking
 //
-//  Created by zl on 2018/5/7.
+//  Created by zl on 2018/5/11.
 //  Copyright © 2018年 longjianjiang. All rights reserved.
 //
 
-#import "JXDemoAPIManager.h"
+#import "JXPageableDemoManager.h"
 #import "Target_JXDemoService.h"
 
 
-
-@interface JXDemoAPIManager()<JXAPIManagerValidator> {
-    BOOL _hasNextPage;
+@interface JXPageableDemoManager()<JXAPIManagerValidator> {
     NSUInteger _currentPage;
+    BOOL _hasNextPage;
     NSUInteger _totalPage;
 }
 
 @end
 
+@implementation JXPageableDemoManager
 
-@implementation JXDemoAPIManager
-
-- (instancetype)init {
+-(instancetype)init {
     if (self = [super init]) {
         _currentPage = 1;
         _hasNextPage = YES;
@@ -31,35 +29,45 @@
     return self;
 }
 
+- (NSDictionary *)reformParams:(NSDictionary *)params {
+    NSMutableDictionary *mutableParams = [params mutableCopy];
+    [mutableParams setObject:@(_currentPage) forKey:@"page"];
+    [mutableParams setObject:@(self.pageSize) forKey:@"per_page"];
+    [mutableParams setObject:@(2) forKey:@"video_type"];
+    return mutableParams;
+}
+
 
 #pragma mark - JXPageableAPIManager
+
+// delegate
 - (NSUInteger)currentPageSize {
     return [self.successItem.responseJSONDict[@"data"][@"items"] count];
 }
-
 - (NSUInteger)pageSize {
     return 10;
 }
 
-// public method
-- (void)resetPage {
-    [self resetPage:1];
-}
-
-- (void)resetPage:(NSUInteger)page {
-    if (_totalPage && page > _totalPage) {
-        return;
-    }
-    _currentPage = page;
-    
-    _hasNextPage = page < _totalPage;
-}
-
+// method
 - (NSInteger)loadNextPage {
     if (self.isLoading) {
         return -1;
     }
+    
     return [super loadData];
+}
+- (void)resetPage {
+    [self resetPage:1];
+}
+- (void)resetPage:(NSUInteger)page {
+
+    if (_totalPage == 0 || page > _totalPage) {
+        return;
+    }
+    
+    _currentPage = page;
+    
+    _hasNextPage = page < _totalPage;
 }
 
 // property
@@ -84,14 +92,6 @@
     return JXNetworkingDemoServiceIdentifier;
 }
 
-- (NSDictionary *)reformParams:(NSDictionary *)params {
-    NSMutableDictionary *mutableParams = [params mutableCopy];
-    [mutableParams setObject:@(_currentPage) forKey:@"page"];
-    [mutableParams setObject:@(2) forKey:@"video_type"];
-    [mutableParams setObject:@(self.pageSize) forKey:@"per_page"];
-    return mutableParams;
-}
-
 
 #pragma mark - JXAPIManagerValidator
 - (JXNetworkingAPIManagerErrorType)jxManager:(JXBaseAPIManager *)manager isCorrectWithResponseData:(id)responseData {
@@ -102,15 +102,16 @@
     return JXNetworkingAPIManagerErrorTypeParamsCorrect;
 }
 
-#pragma mark - JXAPIManagerInterceptor
+
+#pragma mark - Interceptor
 - (BOOL)beforePerformSuccessItem:(JXResponseSuccessItem *)successItem {
-   
     if (self.currentPageSize < self.pageSize) {
-        _totalPage = _currentPage;
         _hasNextPage = NO;
+        _totalPage = _currentPage;
     } else {
-         _currentPage += 1;
+        _currentPage += 1;
     }
+    
     return [super beforePerformSuccessItem:successItem];
 }
 
@@ -118,7 +119,7 @@
     if (_currentPage > 1) {
         _currentPage -= 1;
     }
+    
     return [super beforePerformFailItem:failItem];
 }
-
 @end
