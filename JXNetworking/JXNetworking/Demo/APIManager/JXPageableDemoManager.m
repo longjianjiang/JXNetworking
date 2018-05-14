@@ -33,7 +33,7 @@
     NSMutableDictionary *mutableParams = [params mutableCopy];
     [mutableParams setObject:@(_currentPage) forKey:@"page"];
     [mutableParams setObject:@(self.pageSize) forKey:@"per_page"];
-    [mutableParams setObject:@(2) forKey:@"video_type"];
+    [mutableParams setObject:@(3) forKey:@"video_type"];
     return mutableParams;
 }
 

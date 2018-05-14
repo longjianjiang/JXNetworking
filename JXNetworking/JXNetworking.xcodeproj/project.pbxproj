@@ -32,6 +32,7 @@
 		78ECB11020A92FAA0088B73B /* UIScrollView+PullUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ECB10F20A92FAA0088B73B /* UIScrollView+PullUp.m */; };
 		78ECB11420A932810088B73B /* JXDemoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ECB11320A932810088B73B /* JXDemoViewModel.m */; };
 		78ECB11920A969C60088B73B /* JXDemoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ECB11720A969C60088B73B /* JXDemoCell.m */; };
+		78ECB12120A992170088B73B /* JXNetworking+Reactive.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ECB12020A992170088B73B /* JXNetworking+Reactive.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,8 @@
 		78ECB11320A932810088B73B /* JXDemoViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXDemoViewModel.m; sourceTree = "<group>"; };
 		78ECB11620A969C60088B73B /* JXDemoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXDemoCell.h; sourceTree = "<group>"; };
 		78ECB11720A969C60088B73B /* JXDemoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXDemoCell.m; sourceTree = "<group>"; };
+		78ECB11F20A992170088B73B /* JXNetworking+Reactive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JXNetworking+Reactive.h"; sourceTree = "<group>"; };
+		78ECB12020A992170088B73B /* JXNetworking+Reactive.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "JXNetworking+Reactive.m"; sourceTree = "<group>"; };
 		A472871FE32200CDB7DF2BCB /* libPods-JXNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JXNetworking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4BA113CCA1BBF2ACB9FF669 /* Pods-JXNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXNetworking.release.xcconfig"; path = "Pods/Target Support Files/Pods-JXNetworking/Pods-JXNetworking.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -317,6 +320,7 @@
 		78BD70BE209C6B5A007F44BA /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				78ECB12220A992200088B73B /* Reactive */,
 				780F8EBD209D9F7F0004918B /* NSDictionary */,
 				78BD70BF209C6B8A007F44BA /* NSURLRequest */,
 			);
@@ -368,6 +372,15 @@
 				78ECB11720A969C60088B73B /* JXDemoCell.m */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		78ECB12220A992200088B73B /* Reactive */ = {
+			isa = PBXGroup;
+			children = (
+				78ECB11F20A992170088B73B /* JXNetworking+Reactive.h */,
+				78ECB12020A992170088B73B /* JXNetworking+Reactive.m */,
+			);
+			path = Reactive;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -540,6 +553,7 @@
 				78ECB10520A58F520088B73B /* JXPageableDemoManager.m in Sources */,
 				78BD70BA209C62C8007F44BA /* JXCacheProxy.m in Sources */,
 				78ECB11920A969C60088B73B /* JXDemoCell.m in Sources */,
+				78ECB12120A992170088B73B /* JXNetworking+Reactive.m in Sources */,
 				780F8EC8209FF0E00004918B /* JXDemoService.m in Sources */,
 				78ECB10220A58F400088B73B /* JXDemoManager.m in Sources */,
 				78BD70B6209C45D0007F44BA /* JXBaseAPIManager.m in Sources */,
