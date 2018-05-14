@@ -177,7 +177,7 @@ NSString * const kJXBaseAPIManagerRequestID = @"kJXBaseAPIManagerRequestID";
     self.isLoading = NO;
     self.successItem = successItem;
     
-    self.fetchedRawData = [successItem.responseData copy];
+    self.fetchedRawData = [successItem.responseJSONDict copy];
     [self removeRequestIdWithRequestID:successItem.requestId];
     
     JXNetworkingAPIManagerErrorType errorType = [self.validator jxManager:self isCorrectWithResponseData:successItem.responseJSONDict];

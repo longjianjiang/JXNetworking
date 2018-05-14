@@ -28,6 +28,10 @@
 		78BD70C2209C6BDE007F44BA /* NSURLRequest+JXNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 78BD70C1209C6BDE007F44BA /* NSURLRequest+JXNetworking.m */; };
 		78ECB10220A58F400088B73B /* JXDemoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ECB10120A58F400088B73B /* JXDemoManager.m */; };
 		78ECB10520A58F520088B73B /* JXPageableDemoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ECB10420A58F520088B73B /* JXPageableDemoManager.m */; };
+		78ECB10D20A92ED10088B73B /* JXPageableDemoDataReformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ECB10C20A92ED10088B73B /* JXPageableDemoDataReformer.m */; };
+		78ECB11020A92FAA0088B73B /* UIScrollView+PullUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ECB10F20A92FAA0088B73B /* UIScrollView+PullUp.m */; };
+		78ECB11420A932810088B73B /* JXDemoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ECB11320A932810088B73B /* JXDemoViewModel.m */; };
+		78ECB11920A969C60088B73B /* JXDemoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ECB11720A969C60088B73B /* JXDemoCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +88,14 @@
 		78ECB10120A58F400088B73B /* JXDemoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXDemoManager.m; sourceTree = "<group>"; };
 		78ECB10320A58F520088B73B /* JXPageableDemoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXPageableDemoManager.h; sourceTree = "<group>"; };
 		78ECB10420A58F520088B73B /* JXPageableDemoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXPageableDemoManager.m; sourceTree = "<group>"; };
+		78ECB10B20A92ED10088B73B /* JXPageableDemoDataReformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXPageableDemoDataReformer.h; sourceTree = "<group>"; };
+		78ECB10C20A92ED10088B73B /* JXPageableDemoDataReformer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXPageableDemoDataReformer.m; sourceTree = "<group>"; };
+		78ECB10E20A92FAA0088B73B /* UIScrollView+PullUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+PullUp.h"; sourceTree = "<group>"; };
+		78ECB10F20A92FAA0088B73B /* UIScrollView+PullUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+PullUp.m"; sourceTree = "<group>"; };
+		78ECB11220A932810088B73B /* JXDemoViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXDemoViewModel.h; sourceTree = "<group>"; };
+		78ECB11320A932810088B73B /* JXDemoViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXDemoViewModel.m; sourceTree = "<group>"; };
+		78ECB11620A969C60088B73B /* JXDemoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXDemoCell.h; sourceTree = "<group>"; };
+		78ECB11720A969C60088B73B /* JXDemoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXDemoCell.m; sourceTree = "<group>"; };
 		A472871FE32200CDB7DF2BCB /* libPods-JXNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JXNetworking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4BA113CCA1BBF2ACB9FF669 /* Pods-JXNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXNetworking.release.xcconfig"; path = "Pods/Target Support Files/Pods-JXNetworking/Pods-JXNetworking.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,6 +148,11 @@
 		780F8EC4209FF0900004918B /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				78ECB10E20A92FAA0088B73B /* UIScrollView+PullUp.h */,
+				78ECB10F20A92FAA0088B73B /* UIScrollView+PullUp.m */,
+				78ECB11520A969A50088B73B /* Cell */,
+				78ECB11120A932700088B73B /* ViewModel */,
+				78ECB10A20A92E8F0088B73B /* DataReformer */,
 				78ECB0FF20A58F1E0088B73B /* APIManager */,
 				780F8EC5209FF0A30004918B /* Service */,
 			);
@@ -326,6 +343,33 @@
 			path = APIManager;
 			sourceTree = "<group>";
 		};
+		78ECB10A20A92E8F0088B73B /* DataReformer */ = {
+			isa = PBXGroup;
+			children = (
+				78ECB10B20A92ED10088B73B /* JXPageableDemoDataReformer.h */,
+				78ECB10C20A92ED10088B73B /* JXPageableDemoDataReformer.m */,
+			);
+			path = DataReformer;
+			sourceTree = "<group>";
+		};
+		78ECB11120A932700088B73B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				78ECB11220A932810088B73B /* JXDemoViewModel.h */,
+				78ECB11320A932810088B73B /* JXDemoViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		78ECB11520A969A50088B73B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				78ECB11620A969C60088B73B /* JXDemoCell.h */,
+				78ECB11720A969C60088B73B /* JXDemoCell.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -481,6 +525,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78ECB10D20A92ED10088B73B /* JXPageableDemoDataReformer.m in Sources */,
+				78ECB11020A92FAA0088B73B /* UIScrollView+PullUp.m in Sources */,
 				780F8EBC209D8DE30004918B /* JXDiskCacheManager.m in Sources */,
 				78275CB4209BFE2500CE63A8 /* ViewController.m in Sources */,
 				78275CDD209C01E100CE63A8 /* JXAPIProxy.m in Sources */,
@@ -493,10 +539,12 @@
 				7812B699209C358B00A5CE33 /* JXLogger.m in Sources */,
 				78ECB10520A58F520088B73B /* JXPageableDemoManager.m in Sources */,
 				78BD70BA209C62C8007F44BA /* JXCacheProxy.m in Sources */,
+				78ECB11920A969C60088B73B /* JXDemoCell.m in Sources */,
 				780F8EC8209FF0E00004918B /* JXDemoService.m in Sources */,
 				78ECB10220A58F400088B73B /* JXDemoManager.m in Sources */,
 				78BD70B6209C45D0007F44BA /* JXBaseAPIManager.m in Sources */,
 				780F8ECC209FF3A30004918B /* Target_JXDemoService.m in Sources */,
+				78ECB11420A932810088B73B /* JXDemoViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,26 +7,24 @@
 //
 
 #import "ViewController.h"
-#import "JXDemoManager.h"
-#import "JXPageableDemoManager.h"
+#import "JXDemoViewModel.h"
+
+#import <ReactiveObjC/ReactiveObjC.h>
+#import "UIScrollView+PullUp.h"
+#import "JXDemoCell.h"
 
 
-@interface ViewController ()<JXAPIManagerDataSource, JXAPIManagerDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
-
-
 
 
 @property (weak, nonatomic) IBOutlet UIButton *normalManagerBtn;
 @property (weak, nonatomic) IBOutlet UIButton *pageableManagerBtn;
 
-
-@property (nonatomic, strong) JXDemoManager *normalManager;
-@property (nonatomic, strong) JXPageableDemoManager *pageableManager;
+@property (nonatomic, strong) JXDemoViewModel *viewModel;
 
 @end
 
-static NSString * const kCellReuseIdentifier = @"kCellReuseIdentifier";
 
 @implementation ViewController
 
@@ -36,9 +34,42 @@ static NSString * const kCellReuseIdentifier = @"kCellReuseIdentifier";
     [self.view addSubview:self.tableView];
 }
 
+- (void)setupRAC {
+    @weakify(self);
+    [[RACObserve(self.viewModel, videoList) skip:1] subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        [self.tableView.indicator hideIndicator];
+        [self.tableView reloadData];
+    }];
+    
+    [[RACObserve(self.viewModel, errorMsg) skip:1] subscribeNext:^(id  _Nullable x) {
+        NSLog(@"error msg is %@", self.viewModel.errorMsg);
+        [self.tableView.indicator hideIndicator];
+    }];
+}
+
+- (void)setupPage {
+    
+    @weakify(self);
+    [self.tableView addPullUpWithActionHandler:^{
+        @strongify(self);
+        if (self.viewModel.hasNextPage) {
+            [self.viewModel loadNextPage];
+        } else {
+            self.tableView.pullUpGetMore = NO;
+            NSLog(@"到底了");
+        }
+    }];
+    
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setupSubview];
+    [self setupRAC];
+    [self setupPage];
 }
 
 
@@ -51,86 +82,52 @@ static NSString * const kCellReuseIdentifier = @"kCellReuseIdentifier";
 - (IBAction)didClickBtn:(id)sender {
     
     if (sender == self.normalManagerBtn) {
-        [self.normalManager loadData];
+       
     }
     
     if (sender == self.pageableManagerBtn) {
-        if (self.pageableManager.hasNextPage) {
-            [self.pageableManager loadNextPage];
-        } else {
-            NSLog(@"已经到底了");
-        }
-        
-        if (self.pageableManager.currentPageNumber == 3) {
-            [self.pageableManager resetPage:5];
-        }
+
     }
     
 }
 
-
-
-#pragma mark - JXAPIManagerDelegate
-- (void)jxManagerCallAPIDidSuccess:(JXBaseAPIManager *)manager {
-    NSLog(@"call api manager success");
-    [self.tableView reloadData];
-}
-
-- (void)jxManager:(JXBaseAPIManager *)manager callAPIDidFail:(JXResponseFailItem *)failItem {
-    NSLog(@"call api manager fail");
-}
-
-
-#pragma mark - JXAPIManagerDataSource
-- (NSDictionary *)paramsForCallAPI:(JXBaseAPIManager *)manager {
-    if (manager == self.normalManager) {
-        return @{@"token": @"0e7e8f19-401b-47d4-8658-e296bea5411c",
-                 @"type": @(1)
-                 };
-    } else if (manager == self.pageableManager) {
-        return @{@"token": @"0e7e8f19-401b-47d4-8658-e296bea5411c"};
-    }
-    
-    return nil;
-    
-}
 
 #pragma mark - UITableView delegate & datasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return self.viewModel.videoList.count;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return self.viewModel.videoList[indexPath.row];
+    JXDemoCell *cell = [tableView dequeueReusableCellWithIdentifier:kJXDemoCellReuseIdentifier forIndexPath:indexPath];
+    [cell updateMsg:[NSString stringWithFormat:@"video item %ld",(long)indexPath.row]];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 
 #pragma mark - getter and setter
-- (JXDemoManager *)normalManager {
-    if (_normalManager == nil) {
-        _normalManager = [JXDemoManager new];
-        _normalManager.cachePolicy = JXNetworkingCachePolicyDisk;
-        _normalManager.delegate = self;
-        _normalManager.paramsSource = self;
-    }
-    return _normalManager;
-}
-
-- (JXPageableDemoManager *)pageableManager {
-    if (_pageableManager == nil) {
-        _pageableManager = [JXPageableDemoManager new];
-        _pageableManager.cachePolicy = JXNetworkingCachePolicyNoCache;
-        _pageableManager.delegate = self;
-        _pageableManager.paramsSource = self;
-    }
-    return _pageableManager;
-    
-}
-
 - (UITableView *)tableView {
     if (_tableView == nil) {
         _tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellReuseIdentifier];
+        [_tableView registerClass:[JXDemoCell class] forCellReuseIdentifier:kJXDemoCellReuseIdentifier];
+        _tableView.rowHeight = 64;
     }
     return _tableView;
 }
 
+
+- (JXDemoViewModel *)viewModel {
+    if (_viewModel == nil) {
+        _viewModel = [JXDemoViewModel new];
+        [_viewModel loadNextPage];
+    }
+    return _viewModel;
+}
 @end
