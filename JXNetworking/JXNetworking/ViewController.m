@@ -46,6 +46,7 @@
         NSLog(@"error msg is %@", self.viewModel.errorMsg);
         [self.tableView.indicator hideIndicator];
     }];
+    
 }
 
 - (void)setupPage {
@@ -64,12 +65,49 @@
 }
 
 
+- (void)testSignal {
+    RACSignal *signal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        [subscriber sendNext:@(5)];
+        [subscriber sendNext:@(6)];
+        [subscriber sendCompleted];
+        return [RACDisposable disposableWithBlock:^{
+            NSLog(@"signal be disposable");
+        }];
+    }];
+    
+    RACSignal *anotherSignal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        [subscriber sendNext:@(7)];
+        
+        [subscriber sendCompleted];
+        return [RACDisposable disposableWithBlock:^{
+            NSLog(@"anotherSignal be disposable");
+        }];
+    }];
+    
+    
+    
+    RACSignal *flattenMapSignal = [signal flattenMap:^__kindof RACSignal * _Nullable(id  _Nullable value) {
+        NSInteger twoTimes = [value integerValue] * [value integerValue];
+        return [RACSignal return:@(twoTimes)];
+    }];
+    RACSignal *concatSignal = [signal concat:anotherSignal];
+    RACSignal *zipSignal = [signal zipWith:anotherSignal];
+    
+    RACDisposable *disposable = [signal subscribeNext:^(id  _Nullable x) {
+        NSLog(@"x = %@",x);
+    } completed:^{
+        NSLog(@"signal completed");
+    }];
+    
+    [disposable dispose];
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setupSubview];
-    [self setupRAC];
-    [self setupPage];
+//    [self setupSubview];
+//    [self setupRAC];
+//    [self setupPage];
 }
 
 
@@ -82,7 +120,7 @@
 - (IBAction)didClickBtn:(id)sender {
     
     if (sender == self.normalManagerBtn) {
-       
+        [self testSignal];
     }
     
     if (sender == self.pageableManagerBtn) {
@@ -100,9 +138,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    return self.viewModel.videoList[indexPath.row];
+    
+    
     JXDemoCell *cell = [tableView dequeueReusableCellWithIdentifier:kJXDemoCellReuseIdentifier forIndexPath:indexPath];
     [cell updateMsg:[NSString stringWithFormat:@"video item %ld",(long)indexPath.row]];
     return cell;
+    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

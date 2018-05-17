@@ -11,12 +11,9 @@
 
 @implementation JXPageableDemoDataReformer
 
-static NSInteger kCount = 0;
-
 - (id)jxManager:(JXBaseAPIManager *)manager reformerData:(id)data {
     
     NSArray *items = data[@"data"][@"items"];
-    kCount += items.count;
     
     NSMutableArray *videoItems = [NSMutableArray array];
     for (NSDictionary *item in items) {

@@ -17,4 +17,7 @@
 
 - (void)loadNextPage;
 
+
+//- (__kindof UITableViewCell *)cellAtIndexPath:(NSIndexPath *)indexPath atTableView:(UITableView *)tableView;
+
 @end

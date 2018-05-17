@@ -57,6 +57,12 @@
 
 
 #pragma mark - JXResponseFailItem
+
+NSString * const JXNetworkingResponseFailItemErrorDomain = @"JXNetworkingResponseFailItemErrorDomain";
+NSInteger const kJXResponseFailItemErrorCode = -1;
+
+NSString * const kJXResponseFailItemErrorMessageKey = @"kJXResponseFailItemErrorMessageKey";
+
 @interface JXResponseFailItem()
 
 @property (nonatomic, strong, readwrite) NSURLRequest *request;
@@ -79,15 +85,20 @@
         self.request = request;
         
         self.requestId = [requestId integerValue];
-        self.error = error;
         self.errorMsg = [self getErrorMsgWithError:error];
         self.status = [self responseStatusWithError:error];
+        if (error) {
+            self.error = [[NSError alloc] initWithDomain:JXNetworkingResponseFailItemErrorDomain code:error.code userInfo:@{kJXResponseFailItemErrorMessageKey: self.errorMsg}];
+        }
+        
     }
     return self;
 }
 
 - (void)updateErrorMsg:(NSString *)errorMsg {
     self.errorMsg = errorMsg;
+    
+    self.error = [[NSError alloc] initWithDomain:JXNetworkingResponseFailItemErrorDomain code:kJXResponseFailItemErrorCode userInfo:@{kJXResponseFailItemErrorMessageKey:errorMsg}];
 }
 
 #pragma mark - private method

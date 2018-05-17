@@ -15,6 +15,7 @@
 #import "JXNetworkingDefines.h"
 
 #import "NSURLRequest+JXNetworking.h"
+#import "JXNetworking+Reactive.h"
 
 #import "JXBaseAPIManager.h"
 

@@ -10,26 +10,56 @@
 
 #import <ReactiveObjC/ReactiveObjC.h>
 
-@protocol JXNetworkingReactiveExtension <NSObject>
+/*************************************************************************************/
 
-- (RACCommand *)requestCommmand;
+@protocol JXAPIManagerReactiveExtension <NSObject>
+
+- (RACCommand *)requestCommand;
 - (RACCommand *)cancelCommand;
 - (RACSignal *)requestErrorSignal;
 - (RACSignal *)executionSignal;
 
-// pageable api manager
+@end
+
+/*************************************************************************************/
+
+@protocol JXPageableAPIManagerReactiveExtension <JXAPIManagerReactiveExtension>
+
+- (RACCommand *)refreshPageCommand;
 - (RACCommand *)loadNextPageCommand;
 
 @end
 
+/*************************************************************************************/
 
-@interface JXBaseAPIManager (Reactive) <JXNetworkingReactiveExtension>
+@protocol JXAPIManagerReactiveProtocol <NSObject>
+
+@required
+- (id <JXAPIManagerReactiveExtension>)reactive;
+
+@end
+
+
+/*************************************************************************************/
+
+@protocol JXPageableAPIManagerReactiveProtocol <NSObject>
+
+@required
+- (id <JXPageableAPIManagerReactiveExtension>)reactive;
+
+@end
+
+
+/*************************************************************************************/
+
+@interface JXBaseAPIManager (Reactive) <JXAPIManagerReactiveExtension, JXPageableAPIManagerReactiveExtension>
 
 @property (nonatomic, strong, readonly) RACCommand *requestCommand;
 @property (nonatomic, strong, readonly) RACCommand *cancelCommand;
 @property (nonatomic, strong, readonly) RACSignal *requestErrorSignal;
 @property (nonatomic, strong, readonly) RACSignal *executionSignal;
 
+@property (nonatomic, strong, readonly) RACCommand *refreshPageCommand;
 @property (nonatomic, strong, readonly) RACCommand *loadNextPageCommand;
 
 - (RACSignal *)requestSignal;
