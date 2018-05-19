@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "JXNetworking"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "A networking abstraction layer."
 
 
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "8.0"
 
 
-  s.source_files  = "JXNetworking/JXNetworking/**/*.{h,m}"
+  s.source_files  = "JXNetworking/JXNetworking/JXNetworking/**/*.{h,m}"
   # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
