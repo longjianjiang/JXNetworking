@@ -16,8 +16,8 @@
 
 - (RACCommand *)requestCommand;
 - (RACCommand *)cancelCommand;
-- (RACSignal *)requestErrorSignal;
-- (RACSignal *)executionSignal;
+- (RACSignal<NSError *> *)requestErrorSignal;
+- (RACSignal<JXResponseSuccessItem *> *)executionSignal;
 
 @end
 
@@ -62,6 +62,5 @@
 @property (nonatomic, strong, readonly) RACCommand *refreshPageCommand;
 @property (nonatomic, strong, readonly) RACCommand *loadNextPageCommand;
 
-- (RACSignal *)requestSignal;
 
 @end

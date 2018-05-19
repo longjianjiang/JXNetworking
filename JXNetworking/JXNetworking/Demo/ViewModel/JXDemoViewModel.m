@@ -26,30 +26,22 @@
 
 @implementation JXDemoViewModel
 
-
-- (void)loadNextPage {
-    [self.pageableManager loadNextPage];
+#pragma mark - JXPageableAPIManagerReactiveProtocol
+- (id<JXPageableAPIManagerReactiveExtension>)reactive {
+    return self.pageableManager;
 }
 
 #pragma mark - life cycle
 
 - (void)bindViewModel {
-//    [self.pageableManager.requestSignal subscribeNext:^(id  _Nullable x) {
-//        NSLog(@"items is %@",x);
-//    } error:^(NSError * _Nullable error) {
-//        NSLog(@"error is %@", error);
-//    }];
-    
-    [self.pageableManager.executionSignal subscribeNext:^(id  _Nullable x) {
-        NSLog(@"items is %@",x);
+    [self.reactive.executionSignal subscribeNext:^(JXResponseSuccessItem * _Nullable x) {
+        NSMutableArray *added = [NSMutableArray arrayWithArray:self.videoList];
+        [added addObjectsFromArray:x.responseJSONDict[@"data"][@"items"]];
+        self.videoList = added;
     }];
     
-    [self.pageableManager.requestErrorSignal subscribeNext:^(id  _Nullable x) {
-        NSLog(@"error is %@", x);
-    }];
 
     [self.pageableManager.refreshPageCommand execute:nil];
-   
 }
 
 
@@ -57,7 +49,7 @@
     self = [super init];
     if (self) {
         _videoList = @[];
-//        [self bindViewModel];
+        [self bindViewModel];
     }
     return self;
 }
@@ -74,24 +66,6 @@
     }
     
     return nil;
-}
-
-#pragma mark - JXAPIManagerDelegate
-- (void)jxManagerCallAPIDidSuccess:(JXBaseAPIManager *)manager {
-    NSLog(@"call api manager success");
-    
-    NSMutableArray *added = [NSMutableArray arrayWithArray:self.videoList];
-//  NSArray *videoItems = [manager fetchDataWithReformer:self.pageableDemoReformer];
-    [added addObjectsFromArray:manager.successItem.responseJSONDict[@"data"][@"items"]];
-    self.videoList = added;
-    
-}
-
-
-- (void)jxManager:(JXBaseAPIManager *)manager callAPIDidFail:(JXResponseFailItem *)failItem {
-    NSLog(@"call api manager fail");
-    
-    self.errorMsg = failItem.errorMsg;
 }
 
 #pragma mark - getter and setter
@@ -125,5 +99,29 @@
         _pageableDemoReformer = [JXPageableDemoDataReformer new];
     }
     return _pageableDemoReformer;
+}
+
+
+#pragma mark - not use
+- (void)loadNextPage {
+    [self.pageableManager loadNextPage];
+}
+
+#pragma mark - JXAPIManagerDelegate
+- (void)jxManagerCallAPIDidSuccess:(JXBaseAPIManager *)manager {
+    NSLog(@"call api manager success");
+    
+    //    NSMutableArray *added = [NSMutableArray arrayWithArray:self.videoList];
+    ////  NSArray *videoItems = [manager fetchDataWithReformer:self.pageableDemoReformer];
+    //    [added addObjectsFromArray:manager.successItem.responseJSONDict[@"data"][@"items"]];
+    //    self.videoList = added;
+    
+}
+
+
+- (void)jxManager:(JXBaseAPIManager *)manager callAPIDidFail:(JXResponseFailItem *)failItem {
+    NSLog(@"call api manager fail");
+    
+    //    self.errorMsg = failItem.errorMsg;
 }
 @end

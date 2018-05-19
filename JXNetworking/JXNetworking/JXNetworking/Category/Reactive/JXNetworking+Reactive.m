@@ -56,6 +56,13 @@
 
 
 - (RACCommand *)requestCommand {
+    
+    if ([self conformsToProtocol:@protocol(JXPageableAPIManager)]) {
+        @throw [NSException exceptionWithName:[NSString stringWithFormat:@"%@ loadData fail",[self class]]
+                                       reason:@"You should not use load data but loadNextPage when api manager implement <JXPageableAPIManager>"
+                                     userInfo:nil];
+    }
+    
     RACCommand *requestCommand = objc_getAssociatedObject(self, @selector(requestCommand));
     if (requestCommand == nil) {
         @weakify(self);
@@ -91,7 +98,7 @@
         loadNextPageCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
             @strongify(self);
             if ([self conformsToProtocol:@protocol(JXPageableAPIManager)]) {
-                [(id<JXPageableAPIManager>)(self) loadNextPage];
+                self.requestId = [(id<JXPageableAPIManager>)(self) loadNextPage];
             } else {
                 @throw [NSException exceptionWithName:[NSString stringWithFormat:@"%@ loadNextPage fail",[self class]]
                                                reason:@"If want to call loadNextPage, Subclass of JXBaseAPIManager should implement <JXPageableAPIManager>"
@@ -112,7 +119,7 @@
             @strongify(self);
             if ([self conformsToProtocol:@protocol(JXPageableAPIManager)]) {
                 [(id<JXPageableAPIManager>)(self) resetPage];
-                [(id<JXPageableAPIManager>)(self) loadNextPage];
+                self.requestId = [(id<JXPageableAPIManager>)(self) loadNextPage];
             } else {
                 @throw [NSException exceptionWithName:[NSString stringWithFormat:@"%@ refresh page fail",[self class]]
                                                reason:@"If want to call refresh page, Subclass of JXBaseAPIManager should implement <JXPageableAPIManager>"
