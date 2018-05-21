@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
 
-  s.name         = "JXNetworking"
-  s.version      = "0.0.3"
+  s.name         = "WJXNetworking"
+  s.version      = "0.0.4"
   s.summary      = "A networking abstraction layer."
 
 
