@@ -13,6 +13,9 @@
 #import "JXPageableDemoDataReformer.h"
 #import "JXNetworking.h"
 
+NSString * const kJXDemoViewModelReactiveTypeNormal = @"kJXDemoViewModelReactiveTypeNormal";
+NSString * const kJXDemoViewModelReactiveTypePageable = @"kJXDemoViewModelReactiveTypePageable";
+
 @interface JXDemoViewModel()<JXAPIManagerDataSource, JXAPIManagerDelegate>
 
 @property (nonatomic, strong) JXDemoManager *normalManager;
@@ -26,22 +29,24 @@
 
 @implementation JXDemoViewModel
 
-#pragma mark - JXPageableAPIManagerReactiveProtocol
-- (id<JXPageableAPIManagerReactiveExtension>)reactive {
-    return self.pageableManager;
+#pragma mark - JXAPIManagerReactiveProtocol
+- (JXNetworkingReactiveTable *)reactiveTable {
+    return @{kJXDemoViewModelReactiveTypeNormal: self.normalManager,
+             kJXDemoViewModelReactiveTypePageable: self.pageableManager
+             };
 }
 
 #pragma mark - life cycle
 
 - (void)bindViewModel {
-    [self.reactive.executionSignal subscribeNext:^(JXResponseSuccessItem * _Nullable x) {
+    [self.reactiveTable[kJXDemoViewModelReactiveTypePageable].executionSignal subscribeNext:^(JXResponseSuccessItem * _Nullable x) {
         NSMutableArray *added = [NSMutableArray arrayWithArray:self.videoList];
         [added addObjectsFromArray:x.responseJSONDict[@"data"][@"items"]];
         self.videoList = added;
     }];
     
 
-    [self.pageableManager.refreshPageCommand execute:nil];
+    [self.reactiveTable[kJXDemoViewModelReactiveTypePageable].refreshPageCommand execute:nil];
 }
 
 

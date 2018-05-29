@@ -9,7 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "JXNetworking.h"
 
-@interface JXDemoViewModel : NSObject <JXPageableAPIManagerReactiveProtocol>
+extern NSString * const kJXDemoViewModelReactiveTypeNormal;
+extern NSString * const kJXDemoViewModelReactiveTypePageable;
+
+@interface JXDemoViewModel : NSObject <JXAPIManagerReactiveProtocol>
 
 @property (nonatomic, assign, readonly) BOOL hasNextPage;
 

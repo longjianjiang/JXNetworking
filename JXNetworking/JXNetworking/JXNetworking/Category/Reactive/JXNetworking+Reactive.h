@@ -10,12 +10,19 @@
 
 #import <ReactiveObjC/ReactiveObjC.h>
 
+@protocol JXAPIManagerReactiveExtension;
+typedef NSDictionary<NSString *,id<JXAPIManagerReactiveExtension>> JXNetworkingReactiveTable;
+
 /*************************************************************************************/
 
 @protocol JXAPIManagerReactiveExtension <NSObject>
 
 - (RACCommand *)requestCommand;
 - (RACCommand *)cancelCommand;
+
+- (RACCommand *)refreshPageCommand;
+- (RACCommand *)loadNextPageCommand;
+
 - (RACSignal<NSError *> *)requestErrorSignal;
 - (RACSignal<JXResponseSuccessItem *> *)executionSignal;
 
@@ -23,36 +30,18 @@
 
 /*************************************************************************************/
 
-@protocol JXPageableAPIManagerReactiveExtension <JXAPIManagerReactiveExtension>
-
-- (RACCommand *)refreshPageCommand;
-- (RACCommand *)loadNextPageCommand;
-
-@end
-
-/*************************************************************************************/
-
 @protocol JXAPIManagerReactiveProtocol <NSObject>
 
-@required
+@optional
 - (id <JXAPIManagerReactiveExtension>)reactive;
+- (JXNetworkingReactiveTable *)reactiveTable;
 
 @end
 
 
 /*************************************************************************************/
 
-@protocol JXPageableAPIManagerReactiveProtocol <NSObject>
-
-@required
-- (id <JXPageableAPIManagerReactiveExtension>)reactive;
-
-@end
-
-
-/*************************************************************************************/
-
-@interface JXBaseAPIManager (Reactive) <JXAPIManagerReactiveExtension, JXPageableAPIManagerReactiveExtension>
+@interface JXBaseAPIManager (Reactive) <JXAPIManagerReactiveExtension>
 
 @property (nonatomic, strong, readonly) RACCommand *requestCommand;
 @property (nonatomic, strong, readonly) RACCommand *cancelCommand;
