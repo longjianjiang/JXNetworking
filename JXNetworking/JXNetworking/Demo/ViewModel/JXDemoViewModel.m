@@ -44,9 +44,6 @@ NSString * const kJXDemoViewModelReactiveTypePageable = @"kJXDemoViewModelReacti
         [added addObjectsFromArray:x.responseJSONDict[@"data"][@"items"]];
         self.videoList = added;
     }];
-    
-
-    [self.reactiveTable[kJXDemoViewModelReactiveTypePageable].refreshPageCommand execute:nil];
 }
 
 
@@ -55,6 +52,7 @@ NSString * const kJXDemoViewModelReactiveTypePageable = @"kJXDemoViewModelReacti
     if (self) {
         _videoList = @[];
         [self bindViewModel];
+        [self.reactiveTable[kJXDemoViewModelReactiveTypePageable].refreshPageCommand execute:nil];
     }
     return self;
 }
@@ -84,6 +82,7 @@ NSString * const kJXDemoViewModelReactiveTypePageable = @"kJXDemoViewModelReacti
         _pageableManager = [JXPageableDemoManager new];
         _pageableManager.delegate = self;
         _pageableManager.paramsSource = self;
+        _pageableManager.cachePolicy = JXNetworkingCachePolicyMemory;
     }
     return _pageableManager;
     

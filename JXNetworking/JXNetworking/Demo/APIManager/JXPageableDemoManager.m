@@ -60,7 +60,13 @@
     [self resetPage:1];
 }
 - (void)resetPage:(NSUInteger)page {
-
+    
+    if (page == 1) {
+        _currentPage = 1;
+        _hasNextPage = YES;
+        return;
+    }
+    
     if (_totalPage == 0 || page > _totalPage) {
         return;
     }

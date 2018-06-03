@@ -40,12 +40,14 @@
     [[RACObserve(self.viewModel, videoList) skip:1] subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         [self.tableView.indicator hideIndicator];
+        [self.tableView.refreshControl endRefreshing];
         [self.tableView reloadData];
     }];
     
     [self.viewModel.reactiveTable[kJXDemoViewModelReactiveTypePageable].requestErrorSignal subscribeNext:^(NSError * _Nullable x) {
         NSLog(@"error msg is %@", x.userInfo[kJXResponseFailItemErrorMessageKey]);
         [self.tableView.indicator hideIndicator];
+        [self.tableView.refreshControl endRefreshing];
     }];
     
 }
@@ -62,6 +64,16 @@
             NSLog(@"到底了");
         }
     }];
+    
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    
+    refreshControl.tintColor = [UIColor grayColor];
+    
+    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"];
+    
+    [refreshControl addTarget:self action:@selector(refreshPage) forControlEvents:UIControlEventValueChanged];
+    
+    self.tableView.refreshControl = refreshControl;
     
 }
 
@@ -83,11 +95,40 @@
 
 
 #pragma mark - response method
+- (void)refreshPage {
+    [self.viewModel.reactiveTable[kJXDemoViewModelReactiveTypePageable].refreshPageCommand execute:nil];
+}
 
+- (void)testRACCommand {
+    RACSubject *subject = [RACSubject subject];
+    
+    RACSignal *signal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        [subscriber sendNext:@"nancy"];
+        [subscriber sendCompleted];
+        return nil;
+    }];
+    
+    RACCommand *command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+        return signal;
+        [subject sendNext:@"nancy"];
+        return subject;
+    }];
+    
+    [command.executionSignals subscribeNext:^(id  _Nullable x) {
+        NSLog(@"command's inner signal is be send");
+    }];
+    
+    [[command.executionSignals switchToLatest] subscribeNext:^(id  _Nullable x) {
+        NSLog(@"%@", x);
+    }];
+    
+    [command execute:nil];
+}
 
 - (IBAction)didClickBtn:(id)sender {
     
     if (sender == self.normalManagerBtn) {
+        [self testRACCommand];
     }
     
     if (sender == self.pageableManagerBtn) {

@@ -33,6 +33,8 @@
 		78ECB11420A932810088B73B /* JXDemoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ECB11320A932810088B73B /* JXDemoViewModel.m */; };
 		78ECB11920A969C60088B73B /* JXDemoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ECB11720A969C60088B73B /* JXDemoCell.m */; };
 		78ECB12120A992170088B73B /* JXNetworking+Reactive.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ECB12020A992170088B73B /* JXNetworking+Reactive.m */; };
+		FB1F509220C3BF31009E5897 /* JXMemoryCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1F509120C3BF31009E5897 /* JXMemoryCacheManager.m */; };
+		FB1F509620C3BF72009E5897 /* JXMemoryCacheRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1F509520C3BF72009E5897 /* JXMemoryCacheRecord.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,10 @@
 		78ECB12020A992170088B73B /* JXNetworking+Reactive.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "JXNetworking+Reactive.m"; sourceTree = "<group>"; };
 		A472871FE32200CDB7DF2BCB /* libPods-JXNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JXNetworking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4BA113CCA1BBF2ACB9FF669 /* Pods-JXNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXNetworking.release.xcconfig"; path = "Pods/Target Support Files/Pods-JXNetworking/Pods-JXNetworking.release.xcconfig"; sourceTree = "<group>"; };
+		FB1F509020C3BF31009E5897 /* JXMemoryCacheManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXMemoryCacheManager.h; sourceTree = "<group>"; };
+		FB1F509120C3BF31009E5897 /* JXMemoryCacheManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXMemoryCacheManager.m; sourceTree = "<group>"; };
+		FB1F509420C3BF72009E5897 /* JXMemoryCacheRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXMemoryCacheRecord.h; sourceTree = "<group>"; };
+		FB1F509520C3BF72009E5897 /* JXMemoryCacheRecord.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXMemoryCacheRecord.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,17 +301,10 @@
 			children = (
 				78BD70B8209C62C8007F44BA /* JXCacheProxy.h */,
 				78BD70B9209C62C8007F44BA /* JXCacheProxy.m */,
+				FB1F508F20C3BEF9009E5897 /* MemoryCache */,
 				78BD70BC209C66BB007F44BA /* DiskCache */,
-				78BD70BB209C66B0007F44BA /* MemoryCache */,
 			);
 			path = Cache;
-			sourceTree = "<group>";
-		};
-		78BD70BB209C66B0007F44BA /* MemoryCache */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MemoryCache;
 			sourceTree = "<group>";
 		};
 		78BD70BC209C66BB007F44BA /* DiskCache */ = {
@@ -381,6 +380,25 @@
 				78ECB12020A992170088B73B /* JXNetworking+Reactive.m */,
 			);
 			path = Reactive;
+			sourceTree = "<group>";
+		};
+		FB1F508F20C3BEF9009E5897 /* MemoryCache */ = {
+			isa = PBXGroup;
+			children = (
+				FB1F509320C3BF4C009E5897 /* Record */,
+				FB1F509020C3BF31009E5897 /* JXMemoryCacheManager.h */,
+				FB1F509120C3BF31009E5897 /* JXMemoryCacheManager.m */,
+			);
+			path = MemoryCache;
+			sourceTree = "<group>";
+		};
+		FB1F509320C3BF4C009E5897 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				FB1F509420C3BF72009E5897 /* JXMemoryCacheRecord.h */,
+				FB1F509520C3BF72009E5897 /* JXMemoryCacheRecord.m */,
+			);
+			path = Record;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -549,6 +567,7 @@
 				780F8EC0209D9F9C0004918B /* NSDictionary+JXNetworking.m in Sources */,
 				78BD70B1209C3D26007F44BA /* JXServiceFactory.m in Sources */,
 				78275CB1209BFE2500CE63A8 /* AppDelegate.m in Sources */,
+				FB1F509220C3BF31009E5897 /* JXMemoryCacheManager.m in Sources */,
 				7812B699209C358B00A5CE33 /* JXLogger.m in Sources */,
 				78ECB10520A58F520088B73B /* JXPageableDemoManager.m in Sources */,
 				78BD70BA209C62C8007F44BA /* JXCacheProxy.m in Sources */,
@@ -556,6 +575,7 @@
 				78ECB12120A992170088B73B /* JXNetworking+Reactive.m in Sources */,
 				780F8EC8209FF0E00004918B /* JXDemoService.m in Sources */,
 				78ECB10220A58F400088B73B /* JXDemoManager.m in Sources */,
+				FB1F509620C3BF72009E5897 /* JXMemoryCacheRecord.m in Sources */,
 				78BD70B6209C45D0007F44BA /* JXBaseAPIManager.m in Sources */,
 				780F8ECC209FF3A30004918B /* Target_JXDemoService.m in Sources */,
 				78ECB11420A932810088B73B /* JXDemoViewModel.m in Sources */,
