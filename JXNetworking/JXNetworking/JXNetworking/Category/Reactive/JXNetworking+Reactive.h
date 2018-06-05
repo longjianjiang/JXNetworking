@@ -25,6 +25,7 @@ typedef NSDictionary<NSString *,id<JXAPIManagerReactiveExtension>> JXNetworkingR
 
 - (RACSignal<NSError *> *)requestErrorSignal;
 - (RACSignal<JXResponseSuccessItem *> *)executionSignal;
+- (RACSignal<NSNumber *> *)executing;
 
 @end
 
@@ -45,8 +46,10 @@ typedef NSDictionary<NSString *,id<JXAPIManagerReactiveExtension>> JXNetworkingR
 
 @property (nonatomic, strong, readonly) RACCommand *requestCommand;
 @property (nonatomic, strong, readonly) RACCommand *cancelCommand;
+
 @property (nonatomic, strong, readonly) RACSignal *requestErrorSignal;
 @property (nonatomic, strong, readonly) RACSignal *executionSignal;
+@property (nonatomic, strong, readonly) RACSignal *executing;
 
 @property (nonatomic, strong, readonly) RACCommand *refreshPageCommand;
 @property (nonatomic, strong, readonly) RACCommand *loadNextPageCommand;

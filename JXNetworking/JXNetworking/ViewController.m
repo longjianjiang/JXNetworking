@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *normalManagerBtn;
 @property (weak, nonatomic) IBOutlet UIButton *pageableManagerBtn;
 
+
 @property (nonatomic, strong) JXDemoViewModel *viewModel;
 
 @end
@@ -82,10 +83,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setupSubview];
-    [self setupRAC];
-    [self setupPage];
+//    [self setupSubview];
+//    [self setupRAC];
+//    [self setupPage];
 
+    
+    [self.viewModel.reactiveTable[kJXDemoViewModelReactiveTypeNormal].executionSignal subscribeNext:^(JXResponseSuccessItem * _Nullable x) {
+        NSLog(@"************normal manager load data success");
+    }];
+    
+    [self.viewModel.reactiveTable[kJXDemoViewModelReactiveTypeNormal].executing subscribeNext:^(NSNumber * _Nullable x) {
+        if ([x boolValue]) {
+            NSLog(@"************normal manager loading");
+        }
+    }];
+    
+    [self.viewModel.reactiveTable[kJXDemoViewModelReactiveTypeNormal].requestErrorSignal subscribeNext:^(NSError * _Nullable x) {
+        NSLog(@"************normal manager load data fail");
+    }];
 }
 
 
@@ -99,36 +114,10 @@
     [self.viewModel.reactiveTable[kJXDemoViewModelReactiveTypePageable].refreshPageCommand execute:nil];
 }
 
-- (void)testRACCommand {
-    RACSubject *subject = [RACSubject subject];
-    
-    RACSignal *signal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
-        [subscriber sendNext:@"nancy"];
-        [subscriber sendCompleted];
-        return nil;
-    }];
-    
-    RACCommand *command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
-        return signal;
-        [subject sendNext:@"nancy"];
-        return subject;
-    }];
-    
-    [command.executionSignals subscribeNext:^(id  _Nullable x) {
-        NSLog(@"command's inner signal is be send");
-    }];
-    
-    [[command.executionSignals switchToLatest] subscribeNext:^(id  _Nullable x) {
-        NSLog(@"%@", x);
-    }];
-    
-    [command execute:nil];
-}
-
 - (IBAction)didClickBtn:(id)sender {
     
     if (sender == self.normalManagerBtn) {
-        [self testRACCommand];
+        [self.viewModel.reactiveTable[kJXDemoViewModelReactiveTypeNormal].requestCommand execute:nil];
     }
     
     if (sender == self.pageableManagerBtn) {

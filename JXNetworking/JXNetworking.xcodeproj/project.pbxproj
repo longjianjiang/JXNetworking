@@ -33,6 +33,7 @@
 		78ECB11420A932810088B73B /* JXDemoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ECB11320A932810088B73B /* JXDemoViewModel.m */; };
 		78ECB11920A969C60088B73B /* JXDemoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ECB11720A969C60088B73B /* JXDemoCell.m */; };
 		78ECB12120A992170088B73B /* JXNetworking+Reactive.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ECB12020A992170088B73B /* JXNetworking+Reactive.m */; };
+		FB10E8F120C6DF7400CDB559 /* JXTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB10E8F020C6DF7400CDB559 /* JXTestViewController.m */; };
 		FB1F509220C3BF31009E5897 /* JXMemoryCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1F509120C3BF31009E5897 /* JXMemoryCacheManager.m */; };
 		FB1F509620C3BF72009E5897 /* JXMemoryCacheRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1F509520C3BF72009E5897 /* JXMemoryCacheRecord.m */; };
 /* End PBXBuildFile section */
@@ -103,6 +104,8 @@
 		78ECB12020A992170088B73B /* JXNetworking+Reactive.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "JXNetworking+Reactive.m"; sourceTree = "<group>"; };
 		A472871FE32200CDB7DF2BCB /* libPods-JXNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JXNetworking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4BA113CCA1BBF2ACB9FF669 /* Pods-JXNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JXNetworking.release.xcconfig"; path = "Pods/Target Support Files/Pods-JXNetworking/Pods-JXNetworking.release.xcconfig"; sourceTree = "<group>"; };
+		FB10E8EF20C6DF7400CDB559 /* JXTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXTestViewController.h; sourceTree = "<group>"; };
+		FB10E8F020C6DF7400CDB559 /* JXTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXTestViewController.m; sourceTree = "<group>"; };
 		FB1F509020C3BF31009E5897 /* JXMemoryCacheManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXMemoryCacheManager.h; sourceTree = "<group>"; };
 		FB1F509120C3BF31009E5897 /* JXMemoryCacheManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXMemoryCacheManager.m; sourceTree = "<group>"; };
 		FB1F509420C3BF72009E5897 /* JXMemoryCacheRecord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXMemoryCacheRecord.h; sourceTree = "<group>"; };
@@ -232,6 +235,8 @@
 				78275CBA209BFE2600CE63A8 /* LaunchScreen.storyboard */,
 				78275CBD209BFE2600CE63A8 /* Info.plist */,
 				78275CBE209BFE2600CE63A8 /* main.m */,
+				FB10E8EF20C6DF7400CDB559 /* JXTestViewController.h */,
+				FB10E8F020C6DF7400CDB559 /* JXTestViewController.m */,
 			);
 			path = JXNetworking;
 			sourceTree = "<group>";
@@ -558,6 +563,7 @@
 			files = (
 				78ECB10D20A92ED10088B73B /* JXPageableDemoDataReformer.m in Sources */,
 				78ECB11020A92FAA0088B73B /* UIScrollView+PullUp.m in Sources */,
+				FB10E8F120C6DF7400CDB559 /* JXTestViewController.m in Sources */,
 				780F8EBC209D8DE30004918B /* JXDiskCacheManager.m in Sources */,
 				78275CB4209BFE2500CE63A8 /* ViewController.m in Sources */,
 				78275CDD209C01E100CE63A8 /* JXAPIProxy.m in Sources */,

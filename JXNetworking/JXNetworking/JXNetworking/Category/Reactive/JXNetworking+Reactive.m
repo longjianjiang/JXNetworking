@@ -149,6 +149,15 @@
     }
     return [self.requestCommand.executionSignals switchToLatest];
 }
+
+- (RACSignal *)executing {
+    if ( [self conformsToProtocol:@protocol(JXPageableAPIManager)] ) {
+        return [RACSignal merge:@[self.refreshPageCommand.executing, self.loadNextPageCommand.executing]];
+    }
+    
+    return self.requestCommand.executing;
+}
+
 @end
 
 

@@ -91,7 +91,7 @@ NSString * const kJXDemoViewModelReactiveTypePageable = @"kJXDemoViewModelReacti
 - (JXDemoManager *)normalManager {
     if (_normalManager == nil) {
         _normalManager = [JXDemoManager new];
-        _normalManager.cachePolicy = JXNetworkingCachePolicyDisk;
+//        _normalManager.cachePolicy = JXNetworkingCachePolicyDisk;
         _normalManager.delegate = self;
         _normalManager.paramsSource = self;
     }
