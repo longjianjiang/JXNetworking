@@ -13,7 +13,7 @@
 #import "JXServiceFactory.h"
 #import "JXLogger.h"
 
-
+#import "CTMediator+JXNetworkingContext.h"
 #import "NSURLRequest+JXNetworking.h"
 
 NSString * const kJXBaseAPIManagerRequestID = @"kJXBaseAPIManagerRequestID";
@@ -339,7 +339,11 @@ NSString * const kJXBaseAPIManagerRequestID = @"kJXBaseAPIManagerRequestID";
 }
 
 - (BOOL)isReachable {
-    return YES;
+    BOOL isReachability = [[CTMediator sharedInstance] JXNetworkingContext_isReachable];
+    if (!isReachability) {
+        self.errorType = JXNetworkingAPIManagerErrorTypeOffline;
+    }
+    return isReachability;
 }
 
 - (BOOL)isLoading {

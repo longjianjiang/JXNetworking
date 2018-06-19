@@ -26,6 +26,8 @@
 		78BD70B6209C45D0007F44BA /* JXBaseAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78BD70B5209C45D0007F44BA /* JXBaseAPIManager.m */; };
 		78BD70BA209C62C8007F44BA /* JXCacheProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 78BD70B9209C62C8007F44BA /* JXCacheProxy.m */; };
 		78BD70C2209C6BDE007F44BA /* NSURLRequest+JXNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 78BD70C1209C6BDE007F44BA /* NSURLRequest+JXNetworking.m */; };
+		78E643A320D8BEBC002BE67F /* CTMediator+JXNetworkingContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E643A220D8BEBC002BE67F /* CTMediator+JXNetworkingContext.m */; };
+		78E643A720D8C791002BE67F /* Target_JXNetworkingContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E643A620D8C791002BE67F /* Target_JXNetworkingContext.m */; };
 		78ECB10220A58F400088B73B /* JXDemoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ECB10120A58F400088B73B /* JXDemoManager.m */; };
 		78ECB10520A58F520088B73B /* JXPageableDemoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ECB10420A58F520088B73B /* JXPageableDemoManager.m */; };
 		78ECB10D20A92ED10088B73B /* JXPageableDemoDataReformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ECB10C20A92ED10088B73B /* JXPageableDemoDataReformer.m */; };
@@ -88,6 +90,10 @@
 		78BD70B9209C62C8007F44BA /* JXCacheProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXCacheProxy.m; sourceTree = "<group>"; };
 		78BD70C0209C6BDE007F44BA /* NSURLRequest+JXNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+JXNetworking.h"; sourceTree = "<group>"; };
 		78BD70C1209C6BDE007F44BA /* NSURLRequest+JXNetworking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+JXNetworking.m"; sourceTree = "<group>"; };
+		78E643A120D8BEBC002BE67F /* CTMediator+JXNetworkingContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CTMediator+JXNetworkingContext.h"; sourceTree = "<group>"; };
+		78E643A220D8BEBC002BE67F /* CTMediator+JXNetworkingContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CTMediator+JXNetworkingContext.m"; sourceTree = "<group>"; };
+		78E643A520D8C791002BE67F /* Target_JXNetworkingContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Target_JXNetworkingContext.h; sourceTree = "<group>"; };
+		78E643A620D8C791002BE67F /* Target_JXNetworkingContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Target_JXNetworkingContext.m; sourceTree = "<group>"; };
 		78ECB10020A58F400088B73B /* JXDemoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXDemoManager.h; sourceTree = "<group>"; };
 		78ECB10120A58F400088B73B /* JXDemoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXDemoManager.m; sourceTree = "<group>"; };
 		78ECB10320A58F520088B73B /* JXPageableDemoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXPageableDemoManager.h; sourceTree = "<group>"; };
@@ -162,6 +168,7 @@
 			children = (
 				78ECB10E20A92FAA0088B73B /* UIScrollView+PullUp.h */,
 				78ECB10F20A92FAA0088B73B /* UIScrollView+PullUp.m */,
+				78E643A420D8C75D002BE67F /* NetworkingContext */,
 				78ECB11520A969A50088B73B /* Cell */,
 				78ECB11120A932700088B73B /* ViewModel */,
 				78ECB10A20A92E8F0088B73B /* DataReformer */,
@@ -324,6 +331,7 @@
 		78BD70BE209C6B5A007F44BA /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				78E643A020D8BDBC002BE67F /* CTMediator */,
 				78ECB12220A992200088B73B /* Reactive */,
 				780F8EBD209D9F7F0004918B /* NSDictionary */,
 				78BD70BF209C6B8A007F44BA /* NSURLRequest */,
@@ -338,6 +346,24 @@
 				78BD70C1209C6BDE007F44BA /* NSURLRequest+JXNetworking.m */,
 			);
 			path = NSURLRequest;
+			sourceTree = "<group>";
+		};
+		78E643A020D8BDBC002BE67F /* CTMediator */ = {
+			isa = PBXGroup;
+			children = (
+				78E643A120D8BEBC002BE67F /* CTMediator+JXNetworkingContext.h */,
+				78E643A220D8BEBC002BE67F /* CTMediator+JXNetworkingContext.m */,
+			);
+			path = CTMediator;
+			sourceTree = "<group>";
+		};
+		78E643A420D8C75D002BE67F /* NetworkingContext */ = {
+			isa = PBXGroup;
+			children = (
+				78E643A520D8C791002BE67F /* Target_JXNetworkingContext.h */,
+				78E643A620D8C791002BE67F /* Target_JXNetworkingContext.m */,
+			);
+			path = NetworkingContext;
 			sourceTree = "<group>";
 		};
 		78ECB0FF20A58F1E0088B73B /* APIManager */ = {
@@ -565,9 +591,11 @@
 				78ECB11020A92FAA0088B73B /* UIScrollView+PullUp.m in Sources */,
 				FB10E8F120C6DF7400CDB559 /* JXTestViewController.m in Sources */,
 				780F8EBC209D8DE30004918B /* JXDiskCacheManager.m in Sources */,
+				78E643A720D8C791002BE67F /* Target_JXNetworkingContext.m in Sources */,
 				78275CB4209BFE2500CE63A8 /* ViewController.m in Sources */,
 				78275CDD209C01E100CE63A8 /* JXAPIProxy.m in Sources */,
 				78275CD9209BFF4300CE63A8 /* JXResponseObject.m in Sources */,
+				78E643A320D8BEBC002BE67F /* CTMediator+JXNetworkingContext.m in Sources */,
 				78275CBF209BFE2600CE63A8 /* main.m in Sources */,
 				78BD70C2209C6BDE007F44BA /* NSURLRequest+JXNetworking.m in Sources */,
 				780F8EC0209D9F9C0004918B /* NSDictionary+JXNetworking.m in Sources */,

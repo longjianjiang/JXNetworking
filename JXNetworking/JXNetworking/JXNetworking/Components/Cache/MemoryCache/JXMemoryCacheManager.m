@@ -7,6 +7,7 @@
 //
 
 #import "JXMemoryCacheManager.h"
+#import "CTMediator+JXNetworkingContext.h"
 #import "JXMemoryCacheRecord.h"
 
 static NSInteger const kCacheCountLimit = 10;
@@ -24,7 +25,7 @@ static NSInteger const kCacheCountLimit = 10;
 - (NSCache *)cache {
     if (_cache == nil) {
         _cache = [NSCache new];
-        _cache.countLimit = kCacheCountLimit;
+        _cache.countLimit = [[CTMediator sharedInstance] JXNetworkingContext_cacheResponseCountLimit];
     }
     return _cache;
 }
