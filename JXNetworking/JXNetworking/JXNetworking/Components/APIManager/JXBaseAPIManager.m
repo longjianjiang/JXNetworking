@@ -217,7 +217,8 @@ NSString * const kJXBaseAPIManagerRequestID = @"kJXBaseAPIManagerRequestID";
         
         JXResponseFailItem *failItem = [[JXResponseFailItem alloc] initWithResponseFailItemWithRequest:successItem.request requestId:@(successItem.requestId) error:nil];
         
-        [failItem updateErrorMsg:successItem.responseJSONDict[@"msgs"]];
+        NSString *errorMsgKey = [[CTMediator sharedInstance] JXNetworkingContext_requestNotMeetExpectionErrorMsgKey];
+        [failItem updateErrorMsg:successItem.responseJSONDict[errorMsgKey]];
         [self failedOnCallingAPI:failItem withErrorType:errorType];
         
     }

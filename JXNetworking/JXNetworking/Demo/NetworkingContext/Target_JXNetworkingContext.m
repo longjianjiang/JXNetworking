@@ -18,4 +18,9 @@
     return 10;
 }
 
+- (NSString *)Action_requestNotMeetExpectionErrorMsgKey:(NSDictionary *)params {
+    return @"msgs";
+}
+
+
 @end

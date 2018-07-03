@@ -18,4 +18,8 @@
     return [[[CTMediator sharedInstance] performTarget:@"JXNetworkingContext" action:@"cacheResponseCountLimit" params:nil shouldCacheTarget:YES] integerValue];
 }
 
+- (NSString *)JXNetworkingContext_requestNotMeetExpectionErrorMsgKey {
+    return [[CTMediator sharedInstance] performTarget:@"JXNetworkingContext" action:@"requestNotMeetExpectionErrorMsgKey" params:nil shouldCacheTarget:YES];
+}
+
 @end

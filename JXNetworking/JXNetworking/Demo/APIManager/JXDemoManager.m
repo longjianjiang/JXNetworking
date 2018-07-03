@@ -39,7 +39,11 @@
 
 #pragma mark - JXAPIManagerValidator
 - (JXNetworkingAPIManagerErrorType)jxManager:(JXBaseAPIManager *)manager isCorrectWithResponseData:(id)responseData {
-    return JXNetworkingAPIManagerErrorTypeParamsCorrect;
+    if ([responseData[@"error_code"] integerValue] == 0) {
+        return JXNetworkingAPIManagerErrorTypeParamsCorrect;
+    }
+    
+    return JXNetworkingAPIManagerErrorTypeContentError;
 }
 
 - (JXNetworkingAPIManagerErrorType)jxManager:(JXBaseAPIManager *)manager isCorrectWithParamsForCallAPI:(NSDictionary *)params {

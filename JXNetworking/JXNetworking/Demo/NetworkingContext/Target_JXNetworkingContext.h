@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSInteger)Action_cacheResponseCountLimit:(NSDictionary *)params;
 
+- (NSString *)Action_requestNotMeetExpectionErrorMsgKey:(NSDictionary *)params;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -11,7 +11,8 @@
 #import <ReactiveObjC/ReactiveObjC.h>
 
 @protocol JXAPIManagerReactiveExtension;
-typedef NSDictionary<NSString *,id<JXAPIManagerReactiveExtension>> JXNetworkingReactiveTable;
+
+typedef NSDictionary<id, id<JXAPIManagerReactiveExtension>> JXNetworkingReactiveTable;
 
 /*************************************************************************************/
 

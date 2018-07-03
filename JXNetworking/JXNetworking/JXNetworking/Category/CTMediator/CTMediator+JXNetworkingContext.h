@@ -15,5 +15,7 @@
 
 - (NSInteger)JXNetworkingContext_cacheResponseCountLimit;
 
+- (NSString *)JXNetworkingContext_requestNotMeetExpectionErrorMsgKey;
+
 @end
 
