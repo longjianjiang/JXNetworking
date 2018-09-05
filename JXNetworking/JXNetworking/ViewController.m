@@ -75,7 +75,6 @@
     [refreshControl addTarget:self action:@selector(refreshPage) forControlEvents:UIControlEventValueChanged];
     
     self.tableView.refreshControl = refreshControl;
-    
 }
 
 
@@ -83,22 +82,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    [self setupSubview];
-//    [self setupRAC];
-//    [self setupPage];
+    [self setupSubview];
+    [self setupRAC];
+    [self setupPage];
 
     
-    [self.viewModel.reactiveTable[kJXDemoViewModelReactiveTypeNormal].executionSignal subscribeNext:^(JXResponseSuccessItem * _Nullable x) {
+    [self.viewModel.reactiveTable[kJXDemoViewModelReactiveTypePageable].executionSignal subscribeNext:^(JXResponseSuccessItem * _Nullable x) {
         NSLog(@"************normal manager load data success");
     }];
     
-    [self.viewModel.reactiveTable[kJXDemoViewModelReactiveTypeNormal].executing subscribeNext:^(NSNumber * _Nullable x) {
+    [self.viewModel.reactiveTable[kJXDemoViewModelReactiveTypePageable].executing subscribeNext:^(NSNumber * _Nullable x) {
         if ([x boolValue]) {
             NSLog(@"************normal manager loading");
         }
     }];
     
-    [self.viewModel.reactiveTable[kJXDemoViewModelReactiveTypeNormal].requestErrorSignal subscribeNext:^(NSError * _Nullable x) {
+    [self.viewModel.reactiveTable[kJXDemoViewModelReactiveTypePageable].requestErrorSignal subscribeNext:^(NSError * _Nullable x) {
         NSLog(@"************normal manager load data fail");
     }];
 }
@@ -135,7 +134,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    return self.viewModel.videoList[indexPath.row];
     
-    
+
     JXDemoCell *cell = [tableView dequeueReusableCellWithIdentifier:kJXDemoCellReuseIdentifier forIndexPath:indexPath];
     [cell updateMsg:[NSString stringWithFormat:@"video item %ld",(long)indexPath.row]];
     return cell;

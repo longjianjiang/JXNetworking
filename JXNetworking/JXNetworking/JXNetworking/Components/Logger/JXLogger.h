@@ -13,7 +13,10 @@
 @interface JXLogger : NSObject
 
 + (void)logDebugInfoWithRequest:(NSURLRequest *)request apiPath:(NSString *)apiPath service:(id<JXServiceProtocol>)service;
+
 + (void)logDebugInfoWithResponse:(NSURLResponse *)response responseObject:(id)responseObj;
 + (void)logDebugInfoWithCachedResponse:(JXResponseSuccessItem *)successItem apiPath:(NSString *)apiPath apiParams:(NSDictionary *)params;
+
++ (void)logDebugInfoWithRetryApiPath:(NSString *)apiPath service:(id<JXServiceProtocol>)service;
 
 @end

@@ -10,8 +10,6 @@
 #import "CTMediator+JXNetworkingContext.h"
 #import "JXMemoryCacheRecord.h"
 
-static NSInteger const kCacheCountLimit = 10;
-
 @interface JXMemoryCacheManager()
 
 @property (nonatomic,strong) NSCache *cache;

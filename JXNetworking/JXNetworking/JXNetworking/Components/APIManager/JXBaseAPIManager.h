@@ -35,9 +35,10 @@
 @property (nonatomic, assign, readonly) BOOL isReachable;
 @property (nonatomic, assign, readonly) BOOL isLoading;
 
-
 // call api
 - (NSInteger)loadData;
+@property (nonatomic, assign) BOOL shouldRetry; // default is NO, if YES only status is `JXResponseStatusErrorTimeout` will retry
+@property (nonatomic, assign) NSUInteger retryCount; // default times is 1
 
 // cancel
 - (void)cancelAllRequests;
@@ -47,9 +48,8 @@
 - (nonnull id)fetchDataWithReformer:(id <JXAPIManagerDataReformer> )reformer;
 - (void)clearData;
 
-
 // default
-- (JXNetworkingRequestType)apiRequestType;
+- (JXNetworkingRequestType)apiRequestType; // default is `POST`
 @end
 
 @interface JXBaseAPIManager (InnerInterceptor)

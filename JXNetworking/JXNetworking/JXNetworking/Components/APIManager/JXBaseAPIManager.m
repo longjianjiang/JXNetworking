@@ -52,6 +52,7 @@ NSString * const kJXBaseAPIManagerRequestID = @"kJXBaseAPIManagerRequestID";
         _memoryCacheSecond = 3 * 60;
         _diskCacheSecond = 3 * 60;
         
+        _retryCount = 1;
         if ([self conformsToProtocol:@protocol(JXAPIManager)]) {
             self.child = (id<JXAPIManager>)self;
         } else {
@@ -246,6 +247,11 @@ NSString * const kJXBaseAPIManagerRequestID = @"kJXBaseAPIManagerRequestID";
     
     [self afterPerformFailItem:failItem];
     
+    if (errorType == JXResponseStatusErrorTimeout && self.shouldRetry && _retryCount > 0) {
+        [JXLogger logDebugInfoWithRetryApiPath:self.child.apiPath service:failItem.request.jx_service];
+        [self loadData];
+        self.retryCount -= 1;
+    }
 }
 
 #pragma mark - method for interceptor

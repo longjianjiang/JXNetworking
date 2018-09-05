@@ -32,9 +32,9 @@ static NSTimeInterval kTimeoutInterval = 20;
 #pragma mark - getters and setters
 - (NSString *)baseURL {
     if (self.apiEnviroment == JXNetworkingServiceEnviromentRelease) {
-         return @"https://mobapi.xsj21.com/api";
+         return @"https://testapp.hexiaoxiang.com/api";
     }
-    return @"https://mobapi.xsj21.com/api";
+    return @"http://192.168.3.236:4002/api";
 }
 
 - (JXNetworkingServiceEnviroment)apiEnviroment {

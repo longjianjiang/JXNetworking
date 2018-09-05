@@ -80,17 +80,19 @@
                                if (error) {
                                    
                                    JXResponseFailItem *failItem = [[JXResponseFailItem alloc] initWithResponseFailItemWithRequest:request requestId:requestId error:error];
-                                   failCallback?failCallback(failItem):nil;
                                    
                                    [JXLogger logDebugInfoWithResponse:response responseObject:failItem];
+                                   
+                                   failCallback?failCallback(failItem):nil;
+                                   
                                    
                                } else {
                                    
                                    JXResponseSuccessItem *successItem = [[JXResponseSuccessItem alloc] initResponseSuccessItemWithRequest:request responseData:responseData requestId:requestId];
-                                   successCallback?successCallback(successItem):nil;
                                    
                                    [JXLogger logDebugInfoWithResponse:response responseObject:successItem];
                                    
+                                   successCallback?successCallback(successItem):nil;
                                    
                                }
                            }];

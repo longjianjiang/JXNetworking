@@ -8,29 +8,6 @@
 
 #import "AppDelegate.h"
 
-
-@interface Person : NSObject
-- (void)sing;
-@end
-
-@implementation Person
-- (void)sing {
-    NSLog(@"i am a person");
-}
-@end
-
-
-@interface Student : Person
-@end
-
-@implementation Student
-- (void)sing {
-    [super sing];
-    NSLog(@"i am a student");
-}
-@end
-
-
 @interface AppDelegate ()
 
 @end
@@ -39,14 +16,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    
-    Person *p = [Person new];
-    [p sing];
-    
-    Student *s = [Student new];
-    [s sing];
-    
     return YES;
 }
 

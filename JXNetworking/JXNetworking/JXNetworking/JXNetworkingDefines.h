@@ -44,7 +44,7 @@ typedef NS_ENUM(NSUInteger, JXNetworkingAPIManagerErrorType) {
 };
 
 
-extern NSString * _Nonnull const kJXBaseAPIManagerRequestID;
+extern NSString * const kJXBaseAPIManagerRequestID;
 extern NSString * const kJXResponseFailItemErrorMessageKey;
 
 /*************************************************************************************/

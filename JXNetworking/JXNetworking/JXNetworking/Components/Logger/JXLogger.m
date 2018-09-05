@@ -10,12 +10,24 @@
 #import "NSURLRequest+JXNetworking.h"
 @implementation JXLogger
 
++ (void)logDebugInfoWithRetryApiPath:(NSString *)apiPath service:(id<JXServiceProtocol>)service {
+#if DEBUG
+    NSMutableString *log = [NSMutableString string];
+    [log appendString:@"\n↘↘↘↘↘↘↘↘↘↘↘↘↘↘↘↘↘↘↘↘↘↘↘ [ JXNetworking Retry Info Start] ↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙"];
+    [log appendFormat:@"\nService            : %@", [service class]];
+    [log appendFormat:@"\nReuqest Path       : %@", apiPath];
+    [log appendString:@"\n↗↗↗↗↗↗↗↗↗↗↗↗↗↗↗↗↗↗↗↗↗↗↗ [ JXNetworking Retry Info End ] ↖↖↖↖↖↖↖↖↖↖↖↖↖↖↖↖↖↖↖↖↖↖↖"];
+    NSLog(@"%@",log);
+#endif
+}
+
 + (void)logDebugInfoWithRequest:(NSURLRequest *)request apiPath:(NSString *)apiPath service:(id<JXServiceProtocol>)service {
 #if DEBUG
     NSMutableString *log = [NSMutableString string];
     [log appendString:@"\n↘↘↘↘↘↘↘↘↘↘↘↘↘↘↘↘↘↘↘↘↘↘↘ [ JXNetworking Request Info Start] ↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙↙"];
     [log appendFormat:@"\nService            : %@", [service class]];
     [log appendFormat:@"\nReuqest Path       : %@", apiPath];
+    [log appendFormat:@"\nRequest Headers    : %@", request.allHTTPHeaderFields];
     [log appendFormat:@"\nReuqest Params     : %@", request.jx_actualRequestParams];
     [log appendFormat:@"\nRequest Type       : %@", request.HTTPMethod];
     [log appendFormat:@"\nRaw Request        : %@", request];

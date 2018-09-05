@@ -42,10 +42,10 @@
 
 // delegate
 - (NSUInteger)currentPageSize {
-    return [self.successItem.responseJSONDict[@"data"][@"items"] count];
+    return [self.successItem.responseJSONDict[@"data"][@"review"] count];
 }
 - (NSUInteger)pageSize {
-    return 10;
+    return 20;
 }
 
 // method
@@ -87,7 +87,7 @@
 
 #pragma mark - JXAPIManager
 - (NSString *)apiPath {
-    return @"student/video/all";
+    return @"msg/review/list";
 }
 
 - (NSString *)apiVersion {
@@ -101,7 +101,11 @@
 
 #pragma mark - JXAPIManagerValidator
 - (JXNetworkingAPIManagerErrorType)jxManager:(JXBaseAPIManager *)manager isCorrectWithResponseData:(id)responseData {
-    return JXNetworkingAPIManagerErrorTypeParamsCorrect;
+    if ([responseData[@"code"] integerValue] == 20000) {
+        return JXNetworkingAPIManagerErrorTypeParamsCorrect;
+    }
+    
+    return JXNetworkingAPIManagerErrorTypeContentError;
 }
 
 - (JXNetworkingAPIManagerErrorType)jxManager:(JXBaseAPIManager *)manager isCorrectWithParamsForCallAPI:(NSDictionary *)params {

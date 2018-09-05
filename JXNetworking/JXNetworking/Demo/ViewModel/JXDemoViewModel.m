@@ -41,7 +41,7 @@ NSString * const kJXDemoViewModelReactiveTypePageable = @"kJXDemoViewModelReacti
 - (void)bindViewModel {
     [self.reactiveTable[kJXDemoViewModelReactiveTypePageable].executionSignal subscribeNext:^(JXResponseSuccessItem * _Nullable x) {
         NSMutableArray *added = [NSMutableArray arrayWithArray:self.videoList];
-        [added addObjectsFromArray:x.responseJSONDict[@"data"][@"items"]];
+        [added addObjectsFromArray:x.responseJSONDict[@"data"][@"review"]];
         self.videoList = added;
     }];
 }
@@ -61,11 +61,11 @@ NSString * const kJXDemoViewModelReactiveTypePageable = @"kJXDemoViewModelReacti
 #pragma mark - JXAPIManagerDataSource
 - (NSDictionary *)paramsForCallAPI:(JXBaseAPIManager *)manager {
     if (manager == self.normalManager) {
-        return @{@"token": @"0e7e8f19-401b-47d4-8658-e296bea5411c",
+        return @{@"token": @"aijieti",
                  @"type": @(1)
                  };
     } else if (manager == self.pageableManager) {
-        return @{@"token": @"0e7e8f19-401b-47d4-8658-e296bea5411c"};
+        return @{@"key": @"3ac1ae37-03e9-4211-85fd-a07fd63c0f22"};
     }
     
     return nil;
@@ -82,7 +82,9 @@ NSString * const kJXDemoViewModelReactiveTypePageable = @"kJXDemoViewModelReacti
         _pageableManager = [JXPageableDemoManager new];
         _pageableManager.delegate = self;
         _pageableManager.paramsSource = self;
-        _pageableManager.cachePolicy = JXNetworkingCachePolicyMemory;
+//        _pageableManager.cachePolicy = JXNetworkingCachePolicyMemory;
+        _pageableManager.shouldRetry = YES;
+        _pageableManager.retryCount = 3;
     }
     return _pageableManager;
     
