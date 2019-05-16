@@ -1,1 +1,0 @@
-../../../CTHandyCategories/CTHandyCategories/CTHandyCategories/NSObject/CTIP/NSObject+CTIP.h

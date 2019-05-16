@@ -1,0 +1,1025 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		78746BAC228D0CFC009FBC4A /* JXNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78746BA2228D0CFC009FBC4A /* JXNetworking.framework */; };
+		78746BB1228D0CFC009FBC4A /* JXNetworkingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78746BB0228D0CFC009FBC4A /* JXNetworkingTests.m */; };
+		78746BB3228D0CFC009FBC4A /* JXNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 78746BA5228D0CFC009FBC4A /* JXNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		78746C0A228D10DB009FBC4A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78746C09228D10DB009FBC4A /* AppDelegate.m */; };
+		78746C0D228D10DB009FBC4A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78746C0C228D10DB009FBC4A /* ViewController.m */; };
+		78746C10228D10DB009FBC4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78746C0E228D10DB009FBC4A /* Main.storyboard */; };
+		78746C12228D10DB009FBC4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78746C11228D10DB009FBC4A /* Assets.xcassets */; };
+		78746C15228D10DB009FBC4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78746C13228D10DB009FBC4A /* LaunchScreen.storyboard */; };
+		78746C18228D10DB009FBC4A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78746C17228D10DB009FBC4A /* main.m */; };
+		78746C1D228D1104009FBC4A /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78746C1C228D1104009FBC4A /* AFNetworking.framework */; };
+		78746C2B228D123B009FBC4A /* ReactiveJXNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 78746C25228D11C6009FBC4A /* ReactiveJXNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		78746C2E228D1275009FBC4A /* JXNetworking+Reactive.h in Headers */ = {isa = PBXBuildFile; fileRef = 78746C2C228D1275009FBC4A /* JXNetworking+Reactive.h */; };
+		78746C2F228D1275009FBC4A /* JXNetworking+Reactive.m in Sources */ = {isa = PBXBuildFile; fileRef = 78746C2D228D1275009FBC4A /* JXNetworking+Reactive.m */; };
+		78746C87228D20FE009FBC4A /* CTMediator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78746C84228D1682009FBC4A /* CTMediator.framework */; };
+		78AD858C228D24FA001A4462 /* ReactiveObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AD858B228D24FA001A4462 /* ReactiveObjC.framework */; };
+		78AD858E228D273F001A4462 /* JXNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78746BA2228D0CFC009FBC4A /* JXNetworking.framework */; };
+		78AD85CC228D2A60001A4462 /* JXNetworkingDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 78AD85A1228D2A5F001A4462 /* JXNetworkingDefines.h */; };
+		78AD85CD228D2A60001A4462 /* NSDictionary+JXNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 78AD85A4228D2A5F001A4462 /* NSDictionary+JXNetworking.h */; };
+		78AD85CE228D2A60001A4462 /* NSDictionary+JXNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AD85A5228D2A5F001A4462 /* NSDictionary+JXNetworking.m */; };
+		78AD85CF228D2A60001A4462 /* CTMediator+JXNetworkingContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AD85A7228D2A5F001A4462 /* CTMediator+JXNetworkingContext.m */; };
+		78AD85D0228D2A60001A4462 /* CTMediator+JXNetworkingContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 78AD85A8228D2A5F001A4462 /* CTMediator+JXNetworkingContext.h */; };
+		78AD85D1228D2A60001A4462 /* JXNetworking+Reactive.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AD85AA228D2A5F001A4462 /* JXNetworking+Reactive.m */; };
+		78AD85D2228D2A60001A4462 /* JXNetworking+Reactive.h in Headers */ = {isa = PBXBuildFile; fileRef = 78AD85AB228D2A5F001A4462 /* JXNetworking+Reactive.h */; };
+		78AD85D3228D2A60001A4462 /* NSURLRequest+JXNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 78AD85AD228D2A5F001A4462 /* NSURLRequest+JXNetworking.h */; };
+		78AD85D4228D2A60001A4462 /* NSURLRequest+JXNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AD85AE228D2A5F001A4462 /* NSURLRequest+JXNetworking.m */; };
+		78AD85D5228D2A60001A4462 /* JXLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 78AD85B1228D2A60001A4462 /* JXLogger.h */; };
+		78AD85D6228D2A60001A4462 /* JXLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AD85B2228D2A60001A4462 /* JXLogger.m */; };
+		78AD85D7228D2A60001A4462 /* JXResponseObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 78AD85B4228D2A60001A4462 /* JXResponseObject.h */; };
+		78AD85D8228D2A60001A4462 /* JXResponseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AD85B5228D2A60001A4462 /* JXResponseObject.m */; };
+		78AD85D9228D2A60001A4462 /* JXDiskCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AD85B8228D2A60001A4462 /* JXDiskCacheManager.m */; };
+		78AD85DA228D2A60001A4462 /* JXDiskCacheManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 78AD85B9228D2A60001A4462 /* JXDiskCacheManager.h */; };
+		78AD85DB228D2A60001A4462 /* JXCacheProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AD85BA228D2A60001A4462 /* JXCacheProxy.m */; };
+		78AD85DC228D2A60001A4462 /* JXCacheProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 78AD85BB228D2A60001A4462 /* JXCacheProxy.h */; };
+		78AD85DD228D2A60001A4462 /* JXMemoryCacheRecord.h in Headers */ = {isa = PBXBuildFile; fileRef = 78AD85BE228D2A60001A4462 /* JXMemoryCacheRecord.h */; };
+		78AD85DE228D2A60001A4462 /* JXMemoryCacheRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AD85BF228D2A60001A4462 /* JXMemoryCacheRecord.m */; };
+		78AD85DF228D2A60001A4462 /* JXMemoryCacheManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 78AD85C0228D2A60001A4462 /* JXMemoryCacheManager.h */; };
+		78AD85E0228D2A60001A4462 /* JXMemoryCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AD85C1228D2A60001A4462 /* JXMemoryCacheManager.m */; };
+		78AD85E1228D2A60001A4462 /* JXBaseAPIManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 78AD85C3228D2A60001A4462 /* JXBaseAPIManager.h */; };
+		78AD85E2228D2A60001A4462 /* JXBaseAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AD85C4228D2A60001A4462 /* JXBaseAPIManager.m */; };
+		78AD85E3228D2A60001A4462 /* JXAPIProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AD85C6228D2A60001A4462 /* JXAPIProxy.m */; };
+		78AD85E4228D2A60001A4462 /* JXAPIProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 78AD85C7228D2A60001A4462 /* JXAPIProxy.h */; };
+		78AD85E5228D2A60001A4462 /* JXServiceProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 78AD85C9228D2A60001A4462 /* JXServiceProtocol.h */; };
+		78AD85E6228D2A60001A4462 /* JXServiceFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 78AD85CA228D2A60001A4462 /* JXServiceFactory.h */; };
+		78AD85E7228D2A60001A4462 /* JXServiceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AD85CB228D2A60001A4462 /* JXServiceFactory.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		78746BAD228D0CFC009FBC4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78746B99228D0CFC009FBC4A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78746BA1228D0CFC009FBC4A;
+			remoteInfo = JXNetworking;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		78746BA2228D0CFC009FBC4A /* JXNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JXNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78746BA5228D0CFC009FBC4A /* JXNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXNetworking.h; sourceTree = "<group>"; };
+		78746BA6228D0CFC009FBC4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78746BAB228D0CFC009FBC4A /* JXNetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JXNetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		78746BB0228D0CFC009FBC4A /* JXNetworkingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXNetworkingTests.m; sourceTree = "<group>"; };
+		78746BB2228D0CFC009FBC4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78746C06228D10DB009FBC4A /* Examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Examples.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		78746C08228D10DB009FBC4A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		78746C09228D10DB009FBC4A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		78746C0B228D10DB009FBC4A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		78746C0C228D10DB009FBC4A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		78746C0F228D10DB009FBC4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		78746C11228D10DB009FBC4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		78746C14228D10DB009FBC4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		78746C16228D10DB009FBC4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78746C17228D10DB009FBC4A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		78746C1C228D1104009FBC4A /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = "<group>"; };
+		78746C23228D11C5009FBC4A /* ReactiveJXNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveJXNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78746C25228D11C6009FBC4A /* ReactiveJXNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactiveJXNetworking.h; sourceTree = "<group>"; };
+		78746C2C228D1275009FBC4A /* JXNetworking+Reactive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JXNetworking+Reactive.h"; sourceTree = "<group>"; };
+		78746C2D228D1275009FBC4A /* JXNetworking+Reactive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JXNetworking+Reactive.m"; sourceTree = "<group>"; };
+		78746C84228D1682009FBC4A /* CTMediator.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CTMediator.framework; sourceTree = "<group>"; };
+		78AD858B228D24FA001A4462 /* ReactiveObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ReactiveObjC.framework; sourceTree = "<group>"; };
+		78AD85A1228D2A5F001A4462 /* JXNetworkingDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXNetworkingDefines.h; sourceTree = "<group>"; };
+		78AD85A4228D2A5F001A4462 /* NSDictionary+JXNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+JXNetworking.h"; sourceTree = "<group>"; };
+		78AD85A5228D2A5F001A4462 /* NSDictionary+JXNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+JXNetworking.m"; sourceTree = "<group>"; };
+		78AD85A7228D2A5F001A4462 /* CTMediator+JXNetworkingContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CTMediator+JXNetworkingContext.m"; sourceTree = "<group>"; };
+		78AD85A8228D2A5F001A4462 /* CTMediator+JXNetworkingContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CTMediator+JXNetworkingContext.h"; sourceTree = "<group>"; };
+		78AD85AA228D2A5F001A4462 /* JXNetworking+Reactive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JXNetworking+Reactive.m"; sourceTree = "<group>"; };
+		78AD85AB228D2A5F001A4462 /* JXNetworking+Reactive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JXNetworking+Reactive.h"; sourceTree = "<group>"; };
+		78AD85AD228D2A5F001A4462 /* NSURLRequest+JXNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+JXNetworking.h"; sourceTree = "<group>"; };
+		78AD85AE228D2A5F001A4462 /* NSURLRequest+JXNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+JXNetworking.m"; sourceTree = "<group>"; };
+		78AD85B1228D2A60001A4462 /* JXLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXLogger.h; sourceTree = "<group>"; };
+		78AD85B2228D2A60001A4462 /* JXLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXLogger.m; sourceTree = "<group>"; };
+		78AD85B4228D2A60001A4462 /* JXResponseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXResponseObject.h; sourceTree = "<group>"; };
+		78AD85B5228D2A60001A4462 /* JXResponseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXResponseObject.m; sourceTree = "<group>"; };
+		78AD85B8228D2A60001A4462 /* JXDiskCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXDiskCacheManager.m; sourceTree = "<group>"; };
+		78AD85B9228D2A60001A4462 /* JXDiskCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXDiskCacheManager.h; sourceTree = "<group>"; };
+		78AD85BA228D2A60001A4462 /* JXCacheProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXCacheProxy.m; sourceTree = "<group>"; };
+		78AD85BB228D2A60001A4462 /* JXCacheProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXCacheProxy.h; sourceTree = "<group>"; };
+		78AD85BE228D2A60001A4462 /* JXMemoryCacheRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXMemoryCacheRecord.h; sourceTree = "<group>"; };
+		78AD85BF228D2A60001A4462 /* JXMemoryCacheRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXMemoryCacheRecord.m; sourceTree = "<group>"; };
+		78AD85C0228D2A60001A4462 /* JXMemoryCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXMemoryCacheManager.h; sourceTree = "<group>"; };
+		78AD85C1228D2A60001A4462 /* JXMemoryCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXMemoryCacheManager.m; sourceTree = "<group>"; };
+		78AD85C3228D2A60001A4462 /* JXBaseAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXBaseAPIManager.h; sourceTree = "<group>"; };
+		78AD85C4228D2A60001A4462 /* JXBaseAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXBaseAPIManager.m; sourceTree = "<group>"; };
+		78AD85C6228D2A60001A4462 /* JXAPIProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXAPIProxy.m; sourceTree = "<group>"; };
+		78AD85C7228D2A60001A4462 /* JXAPIProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXAPIProxy.h; sourceTree = "<group>"; };
+		78AD85C9228D2A60001A4462 /* JXServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXServiceProtocol.h; sourceTree = "<group>"; };
+		78AD85CA228D2A60001A4462 /* JXServiceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXServiceFactory.h; sourceTree = "<group>"; };
+		78AD85CB228D2A60001A4462 /* JXServiceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXServiceFactory.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		78746B9F228D0CFC009FBC4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78746BA8228D0CFC009FBC4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78746BAC228D0CFC009FBC4A /* JXNetworking.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78746C03228D10DB009FBC4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78746C87228D20FE009FBC4A /* CTMediator.framework in Frameworks */,
+				78AD858C228D24FA001A4462 /* ReactiveObjC.framework in Frameworks */,
+				78746C1D228D1104009FBC4A /* AFNetworking.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78746C20228D11C5009FBC4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78AD858E228D273F001A4462 /* JXNetworking.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		78746B98228D0CFC009FBC4A = {
+			isa = PBXGroup;
+			children = (
+				78746BA3228D0CFC009FBC4A /* Products */,
+				78746BBF228D0E57009FBC4A /* Frameworks */,
+				78746BA4228D0CFC009FBC4A /* Sources */,
+				78746C07228D10DB009FBC4A /* Examples */,
+				78746BAF228D0CFC009FBC4A /* Tests */,
+			);
+			sourceTree = "<group>";
+		};
+		78746BA3228D0CFC009FBC4A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				78746BA2228D0CFC009FBC4A /* JXNetworking.framework */,
+				78746BAB228D0CFC009FBC4A /* JXNetworkingTests.xctest */,
+				78746C06228D10DB009FBC4A /* Examples.app */,
+				78746C23228D11C5009FBC4A /* ReactiveJXNetworking.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		78746BA4228D0CFC009FBC4A /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				78746BBC228D0D9F009FBC4A /* SupportingFiles */,
+				78746BBD228D0E10009FBC4A /* JXNetworking */,
+				78746BBE228D0E23009FBC4A /* ReactiveJXNetworking */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		78746BAF228D0CFC009FBC4A /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				78746BB0228D0CFC009FBC4A /* JXNetworkingTests.m */,
+				78746BB2228D0CFC009FBC4A /* Info.plist */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		78746BBC228D0D9F009FBC4A /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				78746C25228D11C6009FBC4A /* ReactiveJXNetworking.h */,
+				78746BA5228D0CFC009FBC4A /* JXNetworking.h */,
+				78746BA6228D0CFC009FBC4A /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		78746BBD228D0E10009FBC4A /* JXNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				78AD85A1228D2A5F001A4462 /* JXNetworkingDefines.h */,
+				78AD85A2228D2A5F001A4462 /* Category */,
+				78AD85AF228D2A60001A4462 /* Components */,
+				78AD85C8228D2A60001A4462 /* Services */,
+			);
+			path = JXNetworking;
+			sourceTree = "<group>";
+		};
+		78746BBE228D0E23009FBC4A /* ReactiveJXNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				78746C2C228D1275009FBC4A /* JXNetworking+Reactive.h */,
+				78746C2D228D1275009FBC4A /* JXNetworking+Reactive.m */,
+			);
+			path = ReactiveJXNetworking;
+			sourceTree = "<group>";
+		};
+		78746BBF228D0E57009FBC4A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				78AD858B228D24FA001A4462 /* ReactiveObjC.framework */,
+				78746C84228D1682009FBC4A /* CTMediator.framework */,
+				78746C1C228D1104009FBC4A /* AFNetworking.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		78746C07228D10DB009FBC4A /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				78746C08228D10DB009FBC4A /* AppDelegate.h */,
+				78746C09228D10DB009FBC4A /* AppDelegate.m */,
+				78746C0B228D10DB009FBC4A /* ViewController.h */,
+				78746C0C228D10DB009FBC4A /* ViewController.m */,
+				78746C0E228D10DB009FBC4A /* Main.storyboard */,
+				78746C11228D10DB009FBC4A /* Assets.xcassets */,
+				78746C13228D10DB009FBC4A /* LaunchScreen.storyboard */,
+				78746C16228D10DB009FBC4A /* Info.plist */,
+				78746C17228D10DB009FBC4A /* main.m */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
+		78AD85A2228D2A5F001A4462 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				78AD85A3228D2A5F001A4462 /* NSDictionary */,
+				78AD85A6228D2A5F001A4462 /* CTMediator */,
+				78AD85A9228D2A5F001A4462 /* Reactive */,
+				78AD85AC228D2A5F001A4462 /* NSURLRequest */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		78AD85A3228D2A5F001A4462 /* NSDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				78AD85A4228D2A5F001A4462 /* NSDictionary+JXNetworking.h */,
+				78AD85A5228D2A5F001A4462 /* NSDictionary+JXNetworking.m */,
+			);
+			path = NSDictionary;
+			sourceTree = "<group>";
+		};
+		78AD85A6228D2A5F001A4462 /* CTMediator */ = {
+			isa = PBXGroup;
+			children = (
+				78AD85A7228D2A5F001A4462 /* CTMediator+JXNetworkingContext.m */,
+				78AD85A8228D2A5F001A4462 /* CTMediator+JXNetworkingContext.h */,
+			);
+			path = CTMediator;
+			sourceTree = "<group>";
+		};
+		78AD85A9228D2A5F001A4462 /* Reactive */ = {
+			isa = PBXGroup;
+			children = (
+				78AD85AA228D2A5F001A4462 /* JXNetworking+Reactive.m */,
+				78AD85AB228D2A5F001A4462 /* JXNetworking+Reactive.h */,
+			);
+			path = Reactive;
+			sourceTree = "<group>";
+		};
+		78AD85AC228D2A5F001A4462 /* NSURLRequest */ = {
+			isa = PBXGroup;
+			children = (
+				78AD85AD228D2A5F001A4462 /* NSURLRequest+JXNetworking.h */,
+				78AD85AE228D2A5F001A4462 /* NSURLRequest+JXNetworking.m */,
+			);
+			path = NSURLRequest;
+			sourceTree = "<group>";
+		};
+		78AD85AF228D2A60001A4462 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				78AD85B0228D2A60001A4462 /* Logger */,
+				78AD85B3228D2A60001A4462 /* Response */,
+				78AD85B6228D2A60001A4462 /* Cache */,
+				78AD85C2228D2A60001A4462 /* APIManager */,
+				78AD85C5228D2A60001A4462 /* APIProxy */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		78AD85B0228D2A60001A4462 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				78AD85B1228D2A60001A4462 /* JXLogger.h */,
+				78AD85B2228D2A60001A4462 /* JXLogger.m */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		78AD85B3228D2A60001A4462 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				78AD85B4228D2A60001A4462 /* JXResponseObject.h */,
+				78AD85B5228D2A60001A4462 /* JXResponseObject.m */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		78AD85B6228D2A60001A4462 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				78AD85B7228D2A60001A4462 /* DiskCache */,
+				78AD85BA228D2A60001A4462 /* JXCacheProxy.m */,
+				78AD85BB228D2A60001A4462 /* JXCacheProxy.h */,
+				78AD85BC228D2A60001A4462 /* MemoryCache */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		78AD85B7228D2A60001A4462 /* DiskCache */ = {
+			isa = PBXGroup;
+			children = (
+				78AD85B8228D2A60001A4462 /* JXDiskCacheManager.m */,
+				78AD85B9228D2A60001A4462 /* JXDiskCacheManager.h */,
+			);
+			path = DiskCache;
+			sourceTree = "<group>";
+		};
+		78AD85BC228D2A60001A4462 /* MemoryCache */ = {
+			isa = PBXGroup;
+			children = (
+				78AD85BD228D2A60001A4462 /* Record */,
+				78AD85C0228D2A60001A4462 /* JXMemoryCacheManager.h */,
+				78AD85C1228D2A60001A4462 /* JXMemoryCacheManager.m */,
+			);
+			path = MemoryCache;
+			sourceTree = "<group>";
+		};
+		78AD85BD228D2A60001A4462 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				78AD85BE228D2A60001A4462 /* JXMemoryCacheRecord.h */,
+				78AD85BF228D2A60001A4462 /* JXMemoryCacheRecord.m */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		78AD85C2228D2A60001A4462 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				78AD85C3228D2A60001A4462 /* JXBaseAPIManager.h */,
+				78AD85C4228D2A60001A4462 /* JXBaseAPIManager.m */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
+		78AD85C5228D2A60001A4462 /* APIProxy */ = {
+			isa = PBXGroup;
+			children = (
+				78AD85C6228D2A60001A4462 /* JXAPIProxy.m */,
+				78AD85C7228D2A60001A4462 /* JXAPIProxy.h */,
+			);
+			path = APIProxy;
+			sourceTree = "<group>";
+		};
+		78AD85C8228D2A60001A4462 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				78AD85C9228D2A60001A4462 /* JXServiceProtocol.h */,
+				78AD85CA228D2A60001A4462 /* JXServiceFactory.h */,
+				78AD85CB228D2A60001A4462 /* JXServiceFactory.m */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		78746B9D228D0CFC009FBC4A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78AD85D7228D2A60001A4462 /* JXResponseObject.h in Headers */,
+				78AD85DA228D2A60001A4462 /* JXDiskCacheManager.h in Headers */,
+				78AD85DC228D2A60001A4462 /* JXCacheProxy.h in Headers */,
+				78AD85E6228D2A60001A4462 /* JXServiceFactory.h in Headers */,
+				78AD85D0228D2A60001A4462 /* CTMediator+JXNetworkingContext.h in Headers */,
+				78AD85D3228D2A60001A4462 /* NSURLRequest+JXNetworking.h in Headers */,
+				78AD85DD228D2A60001A4462 /* JXMemoryCacheRecord.h in Headers */,
+				78AD85E4228D2A60001A4462 /* JXAPIProxy.h in Headers */,
+				78AD85CD228D2A60001A4462 /* NSDictionary+JXNetworking.h in Headers */,
+				78746BB3228D0CFC009FBC4A /* JXNetworking.h in Headers */,
+				78AD85D2228D2A60001A4462 /* JXNetworking+Reactive.h in Headers */,
+				78AD85D5228D2A60001A4462 /* JXLogger.h in Headers */,
+				78AD85DF228D2A60001A4462 /* JXMemoryCacheManager.h in Headers */,
+				78AD85CC228D2A60001A4462 /* JXNetworkingDefines.h in Headers */,
+				78AD85E1228D2A60001A4462 /* JXBaseAPIManager.h in Headers */,
+				78AD85E5228D2A60001A4462 /* JXServiceProtocol.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78746C1E228D11C5009FBC4A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78746C2B228D123B009FBC4A /* ReactiveJXNetworking.h in Headers */,
+				78746C2E228D1275009FBC4A /* JXNetworking+Reactive.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		78746BA1228D0CFC009FBC4A /* JXNetworking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78746BB6228D0CFC009FBC4A /* Build configuration list for PBXNativeTarget "JXNetworking" */;
+			buildPhases = (
+				78746B9D228D0CFC009FBC4A /* Headers */,
+				78746B9E228D0CFC009FBC4A /* Sources */,
+				78746B9F228D0CFC009FBC4A /* Frameworks */,
+				78746BA0228D0CFC009FBC4A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JXNetworking;
+			productName = JXNetworking;
+			productReference = 78746BA2228D0CFC009FBC4A /* JXNetworking.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		78746BAA228D0CFC009FBC4A /* JXNetworkingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78746BB9228D0CFC009FBC4A /* Build configuration list for PBXNativeTarget "JXNetworkingTests" */;
+			buildPhases = (
+				78746BA7228D0CFC009FBC4A /* Sources */,
+				78746BA8228D0CFC009FBC4A /* Frameworks */,
+				78746BA9228D0CFC009FBC4A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				78746BAE228D0CFC009FBC4A /* PBXTargetDependency */,
+			);
+			name = JXNetworkingTests;
+			productName = JXNetworkingTests;
+			productReference = 78746BAB228D0CFC009FBC4A /* JXNetworkingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		78746C05228D10DB009FBC4A /* Examples */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78746C19228D10DB009FBC4A /* Build configuration list for PBXNativeTarget "Examples" */;
+			buildPhases = (
+				78746C02228D10DB009FBC4A /* Sources */,
+				78746C03228D10DB009FBC4A /* Frameworks */,
+				78746C04228D10DB009FBC4A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Examples;
+			productName = Examples;
+			productReference = 78746C06228D10DB009FBC4A /* Examples.app */;
+			productType = "com.apple.product-type.application";
+		};
+		78746C22228D11C5009FBC4A /* ReactiveJXNetworking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78746C28228D11C6009FBC4A /* Build configuration list for PBXNativeTarget "ReactiveJXNetworking" */;
+			buildPhases = (
+				78746C1E228D11C5009FBC4A /* Headers */,
+				78746C1F228D11C5009FBC4A /* Sources */,
+				78746C20228D11C5009FBC4A /* Frameworks */,
+				78746C21228D11C5009FBC4A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReactiveJXNetworking;
+			productName = ReactiveJXNetworking;
+			productReference = 78746C23228D11C5009FBC4A /* ReactiveJXNetworking.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		78746B99228D0CFC009FBC4A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = longjianjiang;
+				TargetAttributes = {
+					78746BA1228D0CFC009FBC4A = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					78746BAA228D0CFC009FBC4A = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					78746C05228D10DB009FBC4A = {
+						CreatedOnToolsVersion = 10.2;
+					};
+					78746C22228D11C5009FBC4A = {
+						CreatedOnToolsVersion = 10.2;
+					};
+				};
+			};
+			buildConfigurationList = 78746B9C228D0CFC009FBC4A /* Build configuration list for PBXProject "JXNetworking" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 78746B98228D0CFC009FBC4A;
+			productRefGroup = 78746BA3228D0CFC009FBC4A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				78746BA1228D0CFC009FBC4A /* JXNetworking */,
+				78746BAA228D0CFC009FBC4A /* JXNetworkingTests */,
+				78746C05228D10DB009FBC4A /* Examples */,
+				78746C22228D11C5009FBC4A /* ReactiveJXNetworking */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		78746BA0228D0CFC009FBC4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78746BA9228D0CFC009FBC4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78746C04228D10DB009FBC4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78746C15228D10DB009FBC4A /* LaunchScreen.storyboard in Resources */,
+				78746C12228D10DB009FBC4A /* Assets.xcassets in Resources */,
+				78746C10228D10DB009FBC4A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78746C21228D11C5009FBC4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		78746B9E228D0CFC009FBC4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78AD85D6228D2A60001A4462 /* JXLogger.m in Sources */,
+				78AD85E3228D2A60001A4462 /* JXAPIProxy.m in Sources */,
+				78AD85DB228D2A60001A4462 /* JXCacheProxy.m in Sources */,
+				78AD85DE228D2A60001A4462 /* JXMemoryCacheRecord.m in Sources */,
+				78AD85D9228D2A60001A4462 /* JXDiskCacheManager.m in Sources */,
+				78AD85E2228D2A60001A4462 /* JXBaseAPIManager.m in Sources */,
+				78AD85D4228D2A60001A4462 /* NSURLRequest+JXNetworking.m in Sources */,
+				78AD85D1228D2A60001A4462 /* JXNetworking+Reactive.m in Sources */,
+				78AD85E7228D2A60001A4462 /* JXServiceFactory.m in Sources */,
+				78AD85D8228D2A60001A4462 /* JXResponseObject.m in Sources */,
+				78AD85CF228D2A60001A4462 /* CTMediator+JXNetworkingContext.m in Sources */,
+				78AD85CE228D2A60001A4462 /* NSDictionary+JXNetworking.m in Sources */,
+				78AD85E0228D2A60001A4462 /* JXMemoryCacheManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78746BA7228D0CFC009FBC4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78746BB1228D0CFC009FBC4A /* JXNetworkingTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78746C02228D10DB009FBC4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78746C0D228D10DB009FBC4A /* ViewController.m in Sources */,
+				78746C18228D10DB009FBC4A /* main.m in Sources */,
+				78746C0A228D10DB009FBC4A /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78746C1F228D11C5009FBC4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78746C2F228D1275009FBC4A /* JXNetworking+Reactive.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		78746BAE228D0CFC009FBC4A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78746BA1228D0CFC009FBC4A /* JXNetworking */;
+			targetProxy = 78746BAD228D0CFC009FBC4A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		78746C0E228D10DB009FBC4A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78746C0F228D10DB009FBC4A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		78746C13228D10DB009FBC4A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78746C14228D10DB009FBC4A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		78746BB4228D0CFC009FBC4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		78746BB5228D0CFC009FBC4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		78746BB7228D0CFC009FBC4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/SupportingFiles/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.longjianjiang.JXNetworking;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		78746BB8228D0CFC009FBC4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/SupportingFiles/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.longjianjiang.JXNetworking;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		78746BBA228D0CFC009FBC4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = JXNetworkingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.longjianjiang.JXNetworkingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		78746BBB228D0CFC009FBC4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = JXNetworkingTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.longjianjiang.JXNetworkingTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		78746C1A228D10DB009FBC4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YN2C6UTHBF;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = Examples/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.longjianjiang.Examples;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		78746C1B228D10DB009FBC4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YN2C6UTHBF;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = Examples/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.longjianjiang.Examples;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		78746C29228D11C6009FBC4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/SupportingFiles/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.longjianjiang.ReactiveJXNetworking;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		78746C2A228D11C6009FBC4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/SupportingFiles/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.longjianjiang.ReactiveJXNetworking;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		78746B9C228D0CFC009FBC4A /* Build configuration list for PBXProject "JXNetworking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78746BB4228D0CFC009FBC4A /* Debug */,
+				78746BB5228D0CFC009FBC4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78746BB6228D0CFC009FBC4A /* Build configuration list for PBXNativeTarget "JXNetworking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78746BB7228D0CFC009FBC4A /* Debug */,
+				78746BB8228D0CFC009FBC4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78746BB9228D0CFC009FBC4A /* Build configuration list for PBXNativeTarget "JXNetworkingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78746BBA228D0CFC009FBC4A /* Debug */,
+				78746BBB228D0CFC009FBC4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78746C19228D10DB009FBC4A /* Build configuration list for PBXNativeTarget "Examples" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78746C1A228D10DB009FBC4A /* Debug */,
+				78746C1B228D10DB009FBC4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78746C28228D11C6009FBC4A /* Build configuration list for PBXNativeTarget "ReactiveJXNetworking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78746C29228D11C6009FBC4A /* Debug */,
+				78746C2A228D11C6009FBC4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 78746B99228D0CFC009FBC4A /* Project object */;
+}
